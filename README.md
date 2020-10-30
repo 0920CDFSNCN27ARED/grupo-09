@@ -30,3 +30,9 @@ Para lograr lo anterior pensamos no pedir datos del cliente hasta que el carrito
 
 - Queremos lograr que la venta sea Site-Home integrando APIs que le permitan al comprador no tener que moverse de su casa para recibir el producto.
 - Guardaremos tiempos de navegacion sobre productos e historial de compras de los productos del cliente, para que cuando vuelva al sitio le mismo pueda tener el dinamismo en ofrecer novedades o similares a compras anteriores, basaremos toda esta info en tags.
+
+## Referencias
+- https://store.cloud9.gg/
+- https://starcitygames.com/
+- https://www.ovnipress.net/
+- https://invictvs.com.ar/tienda/
