@@ -36,3 +36,6 @@ Para lograr lo anterior pensamos no pedir datos del cliente hasta que el carrito
 - https://starcitygames.com/
 - https://www.ovnipress.net/
 - https://invictvs.com.ar/tienda/
+
+## Trello
+-https://trello.com/b/CfOC7FkJ/0920-grupo09-tiendacomics
