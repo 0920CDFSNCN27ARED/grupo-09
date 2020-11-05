@@ -1,0 +1,19 @@
+{
+  "name": "urza-comics",
+  "version": "1.0.0",
+  "description": "**¿Qué productos o servicios brindará nuestro sitio? ¿Quién será nuestra audiencia\r objetivo? ¿Cómo ajustaremos nuestra oferta a ese público?**",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/0920CDFSNCN27ARED/grupo-09.git"
+  },
+  "author": "Santi Herzfeld, Mati Cerdeira y Facu Heredia",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/0920CDFSNCN27ARED/grupo-09/issues"
+  },
+  "homepage": "https://github.com/0920CDFSNCN27ARED/grupo-09#readme"
+}
