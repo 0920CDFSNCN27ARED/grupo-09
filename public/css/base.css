@@ -5,13 +5,14 @@ body {
 header {
   width: 100%;
   height: 120px;
-  background-color: #fbfbfbfb;
+  background-color: #1b1b1bfb; /*prueba cambio color Original #fbfbfbfb; #1b1b1bfb*/
   display: flex;
   flex-wrap: wrap;
   box-sizing: border-box;
   align-items: center;
   flex-direction: row;
   justify-content: space-between;
+  border-radius: 20px; /*prueba flex radius, original nada*/
 }
 
 .header-section {
@@ -41,6 +42,8 @@ header {
 
 .header-links:hover {
   color: #3d3d3d;
+  transform: scale(1.2); /*recize palabras home, comp, nos;*/
+  /*-webkit-text-stroke: 0.1px rgb(243, 227, 227);*/
 }
 
 #first-header-link {
@@ -64,4 +67,13 @@ header {
 
 #last-header-icon {
   margin-right: 60px;
+}
+
+.header-icons:hover {
+  color: #3d3d3d;
+  transform: scale(1.2); /*recize palabras icons */
+}
+
+#logo-header:hover {
+  transform: scale(1.6); /*recize palabras icons */
 }
