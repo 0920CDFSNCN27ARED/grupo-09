@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Page</title>
+
+    <script
+      src="https://kit.fontawesome.com/c408bf9611.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <link rel="stylesheet" href="/css/theme.css" />
+    <link rel="stylesheet" href="/css/base.css" />
+
+    <link rel="stylesheet" href="/css/productPage.css" />
+  </head>
+  <body>
+    <header>
+      <div class="header-section">
+        <a href="/" class="header-links" id="first-header-link">Home</a>
+        <a href="/" class="header-links">Comprar</a>
+        <a href="/" class="header-links">Sobre Nosotros</a>
+      </div>
+
+      <div class="header-section">
+        <img src="/img/logo.png" alt="Logo del sitio" id="logo-header" />
+      </div>
+
+      <div class="header-section">
+        <a href="/" class="fas fa-user header-icons"></a>
+        <a href="/" class="fas fa-search header-icons"></a>
+        <a
+          href="/"
+          class="fas fa-shopping-cart header-icons"
+          id="last-header-icon"
+        ></a>
+      </div>
+    </header>
+    <main class="product-main">
+      <section class="left-images">
+        <img src="/img/image-placeholder.png" />
+        <img src="/img/image-placeholder.png" />
+        <img src="/img/image-placeholder.png" />
+      </section>
+      <section class="main-image">
+        <img src="/img/image-placeholder.png" />
+      </section>
+      <section class="product-description">
+          <h2 id= "product-title">Titulo del Producto</h2>
+          <h4 id= "product-subtitle">Subtitulo</h5>
+            <div class="price-and-rating">
+              <h4 id="price">$100</h4>  
+              <div id = "rating">
+                  <i class="far fa-star"></i>
+                  <i class="far fa-star"></i>
+                  <i class="far fa-star"></i>
+                  <i class="far fa-star"></i>
+                  <i class="far fa-star"></i>
+              </div>
+            </div>
+            <hr/>
+            <h4 id="brand"> Marca </h4>
+            <div class="info-container">
+                <p class="category">Autores:</p>
+                <p class="product-info">Autor 1, Autor 2</p>
+            </div>
+            <div class="info-container">
+                <p class="category">Numero de Paginas:</p>
+                <p class="product-info">50pp</p>
+            </div>
+            <div class="info-container">
+               <p class="category">Tamaño:</p>
+               <p class="product-info">16.8X25.8</p>
+            </div>
+            <div class="info-container">
+                <p class="category">ISSN:</p>
+                <p class="product-info">977000554600100006</p>
+            </div>
+            <hr/>
+            <p id="description">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
+                Iusto ratione harum reprehenderit unde aliquid ad magnam 
+                delectus incidunt deleniti perspiciatis earum, labore, 
+                quibusdam officiis non! Quod, doloremque iste. Quisquam,
+                accusamus.
+            </p>
+            <div id="button-container">
+            <button id="button">Añadir al Carrito</button>
+            </div>
+      </section>
+    </main>
+    <section class="similar-products">
+      <h2 id="similar-products-title">Productos Similares</h2>
+      <div id="similar-products-display">
+       <article class="similar-products-card">
+          <img src="/img/image-placeholder.png" />
+          <div class = "similar-products-card-info">
+            <div>
+              <h4>Titulo</h4>
+              <p>Subtítulo</p>
+              <p>Descripción</p>
+            </div>
+            <div>
+              <h4>Precio</h4>
+              <a href="/carrito"><i  class="fas fa-shopping-cart" id="similar-products-shopping-cart"></i></a>
+            </div>
+          </div>
+        </article>
+        <article class="similar-products-card">
+          <img src="/img/image-placeholder.png" />
+          <div class = "similar-products-card-info">
+            <div>
+              <h4>Titulo</h4>
+              <p>Subtítulo</p>
+              <p>Descripción</p>
+            </div>
+            <div>
+              <h4>Precio</h4>
+              <a href="/carrito"><i  class="fas fa-shopping-cart" id="similar-products-shopping-cart"></i></a>
+            </div>
+          </div>
+        </article>
+        <article class="similar-products-card">
+          <img src="/img/image-placeholder.png" />
+          <div class = "similar-products-card-info">
+            <div>
+              <h4>Titulo</h4>
+              <p>Subtítulo</p>
+              <p>Descripción</p>
+            </div>
+            <div>
+              <h4>Precio</h4>
+              <a href="/carrito"><i  class="fas fa-shopping-cart" id="similar-products-shopping-cart"></i></a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+  </body>
+</html>

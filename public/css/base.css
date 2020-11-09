@@ -1,5 +1,12 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+
 body {
   font-family: 'Lato', sans-serif;
+  background-color: #fbfbfbfb;
 }
 
 header {
@@ -8,7 +15,6 @@ header {
   background-color: #1b1b1bfb; /*prueba cambio color Original #fbfbfbfb; #1b1b1bfb*/
   display: flex;
   flex-wrap: wrap;
-  box-sizing: border-box;
   align-items: center;
   flex-direction: row;
   justify-content: space-between;
