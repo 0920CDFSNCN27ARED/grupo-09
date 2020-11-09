@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Carrito - URZA COMICS</title>
+
+    <script
+      src="https://kit.fontawesome.com/c408bf9611.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/theme.css" />
+    <link rel="stylesheet" href="/css/base.css" />
+    <link rel="stylesheet" href="/css/cartPage.css" />
+  </head>
+  <body>
+    <header>
+      <div class="header-section">
+        <a href="/" class="header-links" id="first-header-link">Home</a>
+        <a href="/" class="header-links">Comprar</a>
+        <a href="/" class="header-links">Sobre Nosotros</a>
+      </div>
+
+      <div class="header-section">
+        <img src="/img/logo.png" alt="Logo del sitio" id="logo-header" />
+      </div>
+
+      <div class="header-section">
+        <a href="/" class="fas fa-user header-icons"></a>
+        <a href="/" class="fas fa-search header-icons"></a>
+        <a
+          href="/"
+          class="fas fa-shopping-cart header-icons"
+          id="last-header-icon"
+        ></a>
+      </div>
+    </header>
+    <main>
+      <div id="cart">
+        <div class="product">
+          <img
+            src="https://cdn.discordapp.com/attachments/593289910203580443/775445024145801216/unknown.png"
+            alt="Producto 1"
+          />
+          <div class="desc">
+            <p class="name">Baby Yoda</p>
+            <p class="type">Funko Pop</p>
+          </div>
+          <p class="precio">$1800</p>
+          <p class="cantidad">1</p>
+          <p class="total">$1800</p>
+        </div>
+        <div class="product">
+          <img
+            src="https://cdn.discordapp.com/attachments/593289910203580443/775445596077162517/unknown.png"
+            alt="Producto 2"
+          />
+          <div class="desc">
+            <p class="name">Iron Man</p>
+            <p class="type">Funko Pop</p>
+          </div>
+          <p class="precio">$1500</p>
+          <p class="cantidad">2</p>
+          <p class="total">$3000</p>
+        </div>
+        <div class="product">
+          <img
+            src="https://cdn.discordapp.com/attachments/593289910203580443/775445858425503744/unknown.png"
+            alt="Producto 3"
+          />
+          <div class="desc">
+            <p class="name">Capitan America</p>
+            <p class="type">Action Figure</p>
+          </div>
+          <p class="precio">$1500</p>
+          <p class="cantidad">1</p>
+          <p class="total">$1500</p>
+        </div>
+      </div>
+      <aside class="black" id="summary">
+        <h2 class="bold" id="summary-title">Resumen</h2>
+        <div class="summary-item">
+          <p class="self-start">Subtotal</p>
+          <p class="self-end">$6300</p>
+        </div>
+        <div class="summary-item">
+          <p class="self-start">Impuesto (21%)</p>
+          <p class="self-end">$1323</p>
+          <p class="self-start">Envío</p>
+          <p class="self-end">$253</p>
+        </div>
+        <div class="summary-item bold">
+          <h2 class="self-start">Total</h2>
+          <h2 class="self-end">$7876</h2>
+        </div>
+        <button type="submit" class="red button">Comprar</button>
+      </aside>
+    </main>
+    <footer></footer>
+  </body>
+</html>
