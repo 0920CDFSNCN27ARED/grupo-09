@@ -11,62 +11,56 @@ body {
 
 header {
   width: 100%;
-  height: 120px;
+  height: 50px;
   background-color: #1b1b1bfb; /*prueba cambio color Original #fbfbfbfb; #1b1b1bfb*/
   display: flex;
-  flex-wrap: wrap;
-  align-items: center;
   flex-direction: row;
+  align-items: center;
   justify-content: space-between;
-  border-radius: 20px; /*prueba flex radius, original nada*/
 }
 
 .header-section {
-  height: 100%;
   display: flex;
-  align-items: center;
   justify-content: center;
   flex-wrap: wrap;
+  align-items: center;
 }
 
 .header-links {
-  margin-top: 50px;
-  margin-bottom: 50px;
   margin-left: 12px;
   margin-right: 12px;
   -webkit-text-stroke: 1px rgba(0, 0, 0, 0);
   font-size: 16px;
-  font-weight: 600;
-  font-stretch: normal;
+  font-weight: normal;
   font-style: normal;
   line-height: 1.38;
   letter-spacing: normal;
-  text-align: left;
   text-decoration: none;
-  color: #8b8b8b;
+  color: #999;
 }
 
 .header-links:hover {
-  color: #3d3d3d;
+  color: #d8d8d8;
   transform: scale(1.2); /*recize palabras home, comp, nos;*/
   /*-webkit-text-stroke: 0.1px rgb(243, 227, 227);*/
 }
 
 #first-header-link {
-  margin-left: 60px;
+  margin-left: 20px;
 }
 
 #logo-header {
-  height: 100%;
-  position: relative;
-  right: 60px;
+  /*position: relative;*/
+  /*right: 60px;*/
+  margin-left: 20px;
+  height: 40px;
 }
 
 .header-icons {
-  margin-left: 8px;
-  margin-right: 8px;
-  font-size: 30px;
-  color: #3d3d3d;
+  margin-left: 12px;
+  margin-right: 12px;
+  font-size: 20px;
+  color: #999;
   text-decoration: none;
   text-align: right;
 }
@@ -76,10 +70,6 @@ header {
 }
 
 .header-icons:hover {
-  color: #3d3d3d;
+  color: #d8d8d8;
   transform: scale(1.2); /*recize palabras icons */
-}
-
-#logo-header:hover {
-  transform: scale(1.6); /*recize palabras icons */
 }
