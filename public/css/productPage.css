@@ -119,48 +119,15 @@ hr {
 }
 
 #similar-products-title {
-  text-align: center;
+  text-align: left;
   padding-top: 40px;
-  font-size: 40px;
+  font-size: 32px;
+  color: #666666;
 }
 
 #similar-products-display {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
-}
-
-.similar-products-card {
-  margin-top: 30px;
-  width: 25%;
-}
-
-.similar-products-card img {
-  width: 100%;
-}
-
-.similar-products-card-info {
-  background-color: #fbfbfb;
-  display: flex;
-  flex-direction: row;
   justify-content: space-between;
-  padding: 15px;
-}
-
-.similar-products-card-info h4 {
-  font-size: 28px;
-  margin-bottom: 6px;
-}
-
-.similar-products-card-info p {
-  font-size: 18px;
-  margin-bottom: 6px;
-  color: #717171;
-}
-
-#similar-products-shopping-cart {
-  font-size: 30px;
-  margin-top: 15px;
-  margin-left: 20px;
-  color: #717171;
+  margin-top: 20px;
 }

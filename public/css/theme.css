@@ -9,3 +9,12 @@
 .bold {
   font-weight: bold;
 }
+
+.gray-font {
+  color: #979797;
+}
+
+.side-bars {
+  padding-left: 100px;
+  padding-right: 100px;
+}

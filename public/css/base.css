@@ -5,7 +5,7 @@
 }
 
 body {
-  font-family: "Lato", sans-serif;
+  font-family: 'Lato', sans-serif;
   background-color: #fbfbfbfb;
 }
 
@@ -72,4 +72,57 @@ header {
 .header-icons:hover {
   color: #d8d8d8;
   transform: scale(1.2); /*recize palabras icons */
+}
+
+.product-card {
+  height: 340px;
+  width: 220px;
+  border-radius: 10px;
+  background-color: white;
+  box-shadow: 0 7px 16px 0 rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+.product-card img {
+  width: 100%;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.product-card:hover {
+  box-shadow: 0 7px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.product-card-title {
+  font-size: 20px;
+  margin-top: 15px;
+}
+
+.product-card-subtitle {
+  font-size: 14px;
+  margin-top: 7px;
+}
+
+#product-card-bottom {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.product-card-price {
+  font-size: 20px;
+  font-weight: bolder;
+  display: inline;
+  align-self: center;
+}
+
+.product-card-button {
+  border-radius: 20px;
+  background-color: #eb5a43;
+  border: none;
+  padding: 8px 15px;
+  color: #fbfbfb;
+  font-weight: bold;
+  letter-spacing: 1.5px;
+  font-size: 14px;
 }
