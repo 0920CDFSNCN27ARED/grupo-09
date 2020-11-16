@@ -1,0 +1,88 @@
+.background {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 93vh;
+  background-color: #ebebeb;
+}
+
+.login-container {
+  display: flex;
+  width: 65%;
+  height: 80vh;
+  padding: 40px 0px 40px 40px;
+  background-color: #ffffff;
+  border: solid 2px #3e3e3e;
+  box-shadow: 8px 8px 0 0 rgba(0, 0, 0, 0.2);
+}
+
+.login-box {
+  width: 45%;
+  letter-spacing: 1px;
+}
+
+.login-box h1 {
+  margin-bottom: 25px;
+  color: #1a1919;
+  font-weight: bold;
+}
+
+.user-pass-submit {
+  margin-bottom: 15px;
+  border: solid 2px #1a1919;
+  padding: 15px 0px;
+  width: 100%;
+  display: block;
+}
+
+.user-pass-submit::placeholder {
+  padding-left: 10px;
+  font-size: 14px;
+}
+
+.new-users {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.login-box p {
+  display: inline;
+}
+
+#cuenta {
+  text-decoration: none;
+}
+
+.ingresar {
+  display: block;
+  margin-top: 20px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #fcfcfc;
+  background-color: #eb5a43;
+  letter-spacing: 1px;
+}
+
+.lines-separation {
+  position: relative;
+  margin-bottom: 20px;
+  margin-top: 40px;
+}
+
+#ingresa-cuentas-fav {
+  position: absolute;
+  z-index: 2;
+  display: block;
+  left: 37%;
+  bottom: -5px;
+  background-color: #ffffff;
+  padding: 0px 4px 0px 4px;
+  letter-spacing: 1px;
+}
+
+#image-test {
+  position: relative;
+  width: 55%;
+}
