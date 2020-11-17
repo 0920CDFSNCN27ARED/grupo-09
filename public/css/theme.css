@@ -22,3 +22,11 @@
   padding-left: 100px;
   padding-right: 100px;
 }
+
+.gray {
+  background-color: #ebebeb;
+}
+
+.white {
+  background-color: #fbfbfb;
+}
