@@ -81,6 +81,14 @@ header {
   background-color: white;
   box-shadow: 0 7px 16px 0 rgba(0, 0, 0, 0.1);
   padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.product-card-top {
+  height: 60%;
+  display: flex;
+  align-items: center;
 }
 
 .product-card img {
@@ -125,6 +133,7 @@ header {
   font-weight: bold;
   letter-spacing: 1.5px;
   font-size: 14px;
+  cursor: pointer;
 }
 
 .icons {
