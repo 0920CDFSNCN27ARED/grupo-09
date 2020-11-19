@@ -136,18 +136,25 @@ header {
   cursor: pointer;
 }
 
-.icons {
+.footer-icons {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: center;
+  align-items: center;
 }
 
-.media-icons {
+.footer-media-icons {
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 1000px;
   border: solid 2px #1a1919;
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
+  margin-right: 20px;
+}
+
+footer {
+  display: flex;
+  justify-content: space-around;
 }

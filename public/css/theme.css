@@ -10,6 +10,10 @@ h2 {
   font-size: 25px;
 }
 
+.font16 {
+  font-size: 16px;
+}
+
 .red {
   background-color: #eb5a43;
 }
@@ -47,6 +51,14 @@ h2 {
   text-align: center;
 }
 
+.no-decoration {
+  text-decoration: none;
+}
+
+.margin-bot15 {
+  margin-bottom: 15px;
+}
+
 .padding20 {
   padding: 20px;
 }
@@ -57,5 +69,9 @@ h2 {
 
 .padding-top-bot30 {
   padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.padding-bot30 {
   padding-bottom: 30px;
 }

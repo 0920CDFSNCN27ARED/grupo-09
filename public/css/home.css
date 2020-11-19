@@ -7,6 +7,16 @@
   background-image: url('/img/Urza-Banner.jpg');
   width: 100%;
   height: 500px;
+  padding: 50px;
+}
+
+.button-main {
+  margin-top: 150px;
+  padding: 10px 30px;
+  border: none;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
 }
 
 .categories {

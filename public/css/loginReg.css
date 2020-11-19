@@ -86,3 +86,19 @@
   position: relative;
   width: 55%;
 }
+
+.icons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.media-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 1000px;
+  border: solid 2px #1a1919;
+  width: 50px;
+  height: 50px;
+}
