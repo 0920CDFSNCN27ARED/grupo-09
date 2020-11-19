@@ -36,6 +36,16 @@
   display: block;
 }
 
+.name {
+  float: left;
+  width: 49%;
+  margin-right: 5px;
+}
+
+.apellido {
+  width: 49%;
+}
+
 .user-pass-submit::placeholder {
   padding-left: 10px;
   font-size: 14px;
@@ -55,6 +65,11 @@
   text-decoration: none;
 }
 
+#ingresa {
+  text-decoration: none;
+  margin-right: 40px;
+}
+
 .ingresar {
   display: block;
   margin-top: 20px;
@@ -67,15 +82,14 @@
 
 .lines-separation {
   position: relative;
-  margin-bottom: 20px;
-  margin-top: 40px;
+  margin-bottom: 16px;
 }
 
 #ingresa-cuentas-fav {
   position: absolute;
   z-index: 2;
   display: block;
-  left: 37%;
+  left: 32%;
   bottom: -5px;
   background-color: #ffffff;
   padding: 0px 4px 0px 4px;
