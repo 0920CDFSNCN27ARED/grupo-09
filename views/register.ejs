@@ -1,47 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <%- include("partials/head") %>
     <title>register</title>
 
-    <script
-      src="https://kit.fontawesome.com/c408bf9611.js"
-      crossorigin="anonymous"
-    ></script>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Lato&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="/css/theme.css" />
-    <link rel="stylesheet" href="/css/base.css" />
     <link rel="stylesheet" href="/css/loginReg.css" />
   </head>
   <body>
-    <header>
-      <div class="header-section">
-        <img
-          src="/img/Polea_Logo_Sin_Texto.png"
-          alt="Logo del sitio"
-          id="logo-header"
-        />
-        <div>
-          <a href="/" class="header-links" id="first-header-link">Home</a>
-          <a href="/" class="header-links">Comprar</a>
-          <a href="/" class="header-links">Sobre Nosotros</a>
-        </div>
-      </div>
-
-      <div class="header-section">
-        <a href="/" class="fas fa-search header-icons"></a>
-        <a href="/" class="fas fa-user header-icons"></a>
-        <a
-          href="/"
-          class="fas fa-shopping-cart header-icons"
-          id="last-header-icon"
-        ></a>
-      </div>
-    </header>
+    <%- include("partials/header") %>
     <main>
       <div class="background">
         <div class="login-container">
@@ -103,29 +69,6 @@
         </div>
       </div>
     </main>
-    <footer class="white padding20 side-bars">
-      <div>
-        <h4 class="margin-bot15">URZA</h4>
-        <a href="#" class="no-decoration"
-          ><p class="margin-bot15">urza@gmail.com</p></a
-        >
-        <p>Copyright © 2020 Name. All rights reserved.</p>
-      </div>
-
-      <div class="footer-icons">
-        <span class="footer-media-icons"
-          ><i class="fab fa-google font16"></i
-        ></span>
-        <span class="footer-media-icons"
-          ><i class="fab fa-facebook-f font16"></i
-        ></span>
-        <span class="footer-media-icons"
-          ><i class="fab fa-instagram font16"></i
-        ></span>
-        <span class="footer-media-icons"
-          ><i class="fab fa-twitter font16"></i
-        ></span>
-      </div>
-    </footer>
+    <%- include("partials/footer") %>
   </body>
 </html>
