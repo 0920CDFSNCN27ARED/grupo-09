@@ -1,0 +1,11 @@
+@media (max-width: 426px) {
+  /* Footer */
+  footer {
+    display: block;
+    text-align: center;
+  }
+
+  .footer-icons {
+    margin-top: 25px;
+  }
+}

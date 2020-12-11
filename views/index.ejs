@@ -1,10 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <%- include("partials/head") %>
-    <title>URZA COMICS</title>
-
-    <link rel="stylesheet" href="/css/home.css" />
+    <%- include("partials/head", {title: "Urza Comics", styles:
+    "/css/home.css"}); %>
   </head>
   <body>
     <%- include("partials/header") %>
@@ -63,13 +61,13 @@
           sed odit nemo exercitationem dolorum voluptatum, nobis unde!
         </p>
         <div class="product-card-container">
-          <%- include("partials/productCard") %> <%-
-          include("partials/productCard") %> <%- include("partials/productCard")
-          %> <%- include("partials/productCard") %> <%-
-          include("partials/productCard") %>
+          <%-include("partials/productCard") %>
+          <%-include("partials/productCard") %>
+          <%-include("partials/productCard") %>
+          <%-include("partials/productCard") %>
+          <%-include("partials/productCard") %>
         </div>
       </section>
-
       <section class="margin-top30 gray side-bars">
         <h2 class="text-center black-font padding20">Ofertas</h2>
         <p class="gray-font text-center description-text">
@@ -78,10 +76,11 @@
           sed odit nemo exercitationem dolorum voluptatum, nobis unde!
         </p>
         <div class="product-card-container padding-bot30">
-          <%- include("partials/productCard") %> <%-
-          include("partials/productCard") %> <%- include("partials/productCard")
-          %> <%- include("partials/productCard") %> <%-
-          include("partials/productCard") %>
+          <%-include("partials/productCard") %>
+          <%-include("partials/productCard") %>
+          <%-include("partials/productCard") %>
+          <%-include("partials/productCard") %>
+          <%-include("partials/productCard") %>
         </div>
       </section>
     </main>

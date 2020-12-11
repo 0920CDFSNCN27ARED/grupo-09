@@ -39,8 +39,8 @@ h2 {
 }
 
 .side-bars {
-  padding-left: 100px;
-  padding-right: 100px;
+  padding-left: 5%;
+  padding-right: 5%;
 }
 
 .gray {
@@ -82,4 +82,13 @@ h2 {
 
 .display-none {
   display: none;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.space-between {
+  justify-content: space-between;
 }

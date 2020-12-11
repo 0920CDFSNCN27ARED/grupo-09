@@ -1,11 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-     <%- include("partials/head") %>
-    <title>Product Page</title>
-
-    
-    <link rel="stylesheet" href="/css/productPage.css" />
+     <%- include("partials/head", {title: "Product Page", styles: "/css/productPage.css"});  %>  
   </head>
   <body>
      <%- include("partials/header") %>
@@ -66,11 +62,13 @@
     </main>
     <section class="similar-products side-bars">
       <h2 id="similar-products-title">Productos similares</h2>
-      <div id="similar-products-display">
-    <%- include("partials/productCard") %> <%-
-          include("partials/productCard") %> <%- include("partials/productCard")
-          %> <%- include("partials/productCard") %> <%-
-          include("partials/productCard") %>
+      <div class="product-card-container padding-bot30">
+          <%- include("partials/productCard") %> 
+          <%- include("partials/productCard") %> 
+          <%- include("partials/productCard") %>
+          <%- include("partials/productCard") %> 
+          <%- include("partials/productCard") %>
+
       </div>
     </section>
   <%- include("partials/footer") %>

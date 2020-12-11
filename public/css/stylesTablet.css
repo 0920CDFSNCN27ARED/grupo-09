@@ -1,4 +1,5 @@
 @media (max-width: 769px) {
+  /* Header */
   #logo-header {
     display: none;
   }
@@ -10,5 +11,35 @@
   .header-hamburger {
     display: inline;
     margin-left: 30px;
+  }
+
+  /* Product Page */
+  .product-main {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .main-image {
+    width: 100%;
+  }
+
+  .product-description {
+    display: block;
+    order: 2;
+    width: 100%;
+  }
+
+  .left-images {
+    flex-direction: row;
+    order: 1;
+    width: 10%;
+    margin-top: 15px;
+    align-self: flex-start;
+    margin-left: 3px;
+    width: 15%;
+  }
+
+  .left-images img {
+    padding-right: 15px;
   }
 }

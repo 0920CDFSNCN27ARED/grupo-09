@@ -9,6 +9,8 @@ body {
   background-color: #fbfbfbfb;
 }
 
+/* Header */
+
 header {
   width: 100%;
   height: 50px;
@@ -76,6 +78,8 @@ header {
   display: none;
 }
 
+/* Product Card */
+
 .product-card {
   height: 340px;
   width: 220px;
@@ -85,14 +89,15 @@ header {
   padding: 20px;
   display: flex;
   flex-direction: column;
+  margin: 20px;
 }
 
 .product-card-container {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
   margin-top: 40px;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .product-card-top {
@@ -146,6 +151,8 @@ header {
   cursor: pointer;
 }
 
+/* Footer */
+
 .footer-icons {
   display: flex;
   flex-direction: row;
@@ -166,5 +173,5 @@ header {
 
 footer {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
 }
