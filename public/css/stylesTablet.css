@@ -1,0 +1,14 @@
+@media (max-width: 769px) {
+  #logo-header {
+    display: none;
+  }
+
+  .header-links {
+    display: none;
+  }
+
+  .header-hamburger {
+    display: inline;
+    margin-left: 30px;
+  }
+}

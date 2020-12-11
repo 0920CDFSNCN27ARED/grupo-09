@@ -23,18 +23,12 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .image-icon {
   border-radius: 1000px;
   width: 125px;
-}
-
-.images-trending {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  margin-top: 40px;
 }
 
 .categories-text {
