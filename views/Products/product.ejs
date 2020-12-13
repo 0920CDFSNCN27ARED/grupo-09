@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-     <%- include("partials/head", {title: "Product Page", styles: "/css/productPage.css"});  %>  
+     <%- include("../partials/head", {title: "Product Page", styles: "/css/productPage.css"});  %>  
   </head>
   <body>
-     <%- include("partials/header") %>
+     <%- include("../partials/header") %>
     <main class="product-main side-bars">
       <section class="left-images">
         <img src="/img/image-placeholder.png" />
@@ -12,13 +12,13 @@
         <img src="/img/image-placeholder.png" />
       </section>
       <section class="main-image">
-        <img src="/img/image-placeholder.png" />
+        <img src="<%= requiredProduct.image %>" />
       </section>
       <section class="product-description">
-          <h2 id= "product-title">Titulo del Producto</h2>
-          <h4 id= "product-subtitle">Subtitulo</h5>
+          <h2 id= "product-title"><%= requiredProduct.name %></h2>
+          <h4 id= "product-subtitle"><%= requiredProduct.category %></h5>
             <div class="price-and-rating">
-              <h4 id="price">$100</h4>  
+              <h4 id="price">$<%= requiredProduct.price %></h4>  
               <div id = "rating">
                   <i class="far fa-star"></i>
                   <i class="far fa-star"></i>
@@ -47,11 +47,7 @@
             </div>
             <hr/>
             <p id="description">
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
-                Iusto ratione harum reprehenderit unde aliquid ad magnam 
-                delectus incidunt deleniti perspiciatis earum, labore, 
-                quibusdam officiis non! Quod, doloremque iste. Quisquam,
-                accusamus.
+               <%= requiredProduct.description %>
             </p>
             <div id="button-container">
               <form action="#" method="POST">
@@ -63,14 +59,10 @@
     <section class="similar-products side-bars">
       <h2 id="similar-products-title">Productos similares</h2>
       <div class="product-card-container padding-bot30">
-          <%- include("partials/productCard") %> 
-          <%- include("partials/productCard") %> 
-          <%- include("partials/productCard") %>
-          <%- include("partials/productCard") %> 
-          <%- include("partials/productCard") %>
-
+          <% for(i=0; i <5; i++){ %> <%- include("../partials/productCard",
+          {product:products[i]}) %> <% } %>
       </div>
     </section>
-  <%- include("partials/footer") %>
+  <%- include("../partials/footer") %>
   </body>
 </html>

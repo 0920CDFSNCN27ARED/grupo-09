@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include("../partials/head", {title: "Todos los Productos", styles:
+    "/css/productPage.css"}); %>
+  </head>
+  <body>
+    <%- include("../partials/header") %>
+    <main class="product-card-container side-bars">
+      <% for( let i = 0; i < products.length; i++ ) { %> <%-
+      include("../partials/productCard",{product:products[i]}) %> <% } %>
+    </main>
+    <%- include("../partials/footer") %>
+  </body>
+</html>

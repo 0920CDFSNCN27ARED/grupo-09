@@ -13,7 +13,7 @@
           Encontra los mejores productos de Magic, Pokemon, Figuras, Manga y
           Comics!
         </p>
-        <button form="#" class="button-main red">Todos los productos</button>
+        <a href="/products" class="button-main red">Todos los productos</a>
       </div>
       <section class="categories gray padding-top-bot30">
         <div>
@@ -61,11 +61,8 @@
           sed odit nemo exercitationem dolorum voluptatum, nobis unde!
         </p>
         <div class="product-card-container">
-          <%-include("partials/productCard") %>
-          <%-include("partials/productCard") %>
-          <%-include("partials/productCard") %>
-          <%-include("partials/productCard") %>
-          <%-include("partials/productCard") %>
+          <% for(i=0; i <5; i++){ %> <%- include("partials/productCard",
+          {product:products[i]}) %> <% } %>
         </div>
       </section>
       <section class="margin-top30 gray side-bars">
@@ -76,11 +73,8 @@
           sed odit nemo exercitationem dolorum voluptatum, nobis unde!
         </p>
         <div class="product-card-container padding-bot30">
-          <%-include("partials/productCard") %>
-          <%-include("partials/productCard") %>
-          <%-include("partials/productCard") %>
-          <%-include("partials/productCard") %>
-          <%-include("partials/productCard") %>
+          <% for(i=0; i <5; i++){ %> <%- include("partials/productCard",
+          {product:products[i]}) %> <% } %>
         </div>
       </section>
     </main>
