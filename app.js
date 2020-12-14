@@ -1,6 +1,15 @@
 const path = require('path');
 const express = require('express');
 let app = express();
+const bodyParser = require('body-parser');
+
+const jsonParser = bodyParser.json();
+
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+
+const methodOverride = require('method-override');
+app.use(methodOverride('_method'));
 
 app.set('view engine', 'ejs');
 app.set('views', __dirname + '/views');

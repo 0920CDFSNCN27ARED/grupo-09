@@ -11,7 +11,8 @@
 }
 
 .button-main {
-  margin-top: 150px;
+  display: inline-block;
+  margin-top: 300px;
   padding: 10px 30px;
   border: none;
   color: white;

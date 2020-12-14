@@ -1,11 +1,13 @@
-<article class="product-card">
-  <div class="product-card-top">
-    <img src="img/funko-pop-black-ranger.jpg" />
-  </div>
-  <h4 class="product-card-title">Black Ranger</h4>
-  <p class="product-card-subtitle gray-font">Funko Pop</p>
-  <div id="product-card-bottom">
-    <p class="product-card-price">$1500</p>
-    <button class="product-card-button">Comprar</button>
-  </div>
-</article>
+<a href="/products/<%= product.id %>">
+  <article class="product-card">
+    <div class="product-card-top">
+      <img src="<%= product.image %>" />
+    </div>
+    <h4 class="product-card-title"><%= product.name %></h4>
+    <p class="product-card-subtitle gray-font"><%= product.category %></p>
+    <div id="product-card-bottom">
+      <p class="product-card-price">$<%= product.price %></p>
+      <button class="product-card-button">Comprar</button>
+    </div>
+  </article>
+</a>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include("../partials/head", {title: "Crear producto", styles:
+    "/css/forms.css"}); %>
+  </head>
+  <body>
+    <%- include("../partials/header") %>
+
+    <main>
+      <form action="/products" method="POST" class="form-container">
+        <label for="name">Nombre del Producto:</label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          placeholder="Ej: Cartas Magic"
+          class="input"
+        />
+        <label for="description">Descripcion:</label>
+        <textarea
+          id="description"
+          name="description"
+          placeholder="Ej: Mazo de 50 cartas Magic..."
+          class="input"
+          cols="30"
+          rows="10"
+        ></textarea>
+        <label for="price">Precio:</label>
+        <input type="number" id="price" name="price" class="input" />
+
+        <label for="image">URL de la imagen:</label>
+        <input type="text" id="image" name="image" class="input" />
+
+        <label for="category">Categoria:</label>
+        <select id="category" name="category" class="input">
+          <option value="Manga">Manga</option>
+          <option value="Comics">Comics</option>
+          <option value="Juegos">Juegos</option>
+          <option value="Rol">Rol</option>
+          <option value="Juguetes">Juguetes</option>
+          <option value="TCG">TCG</option>
+        </select>
+
+        <button type="submit" class="form-button red">Guardar Producto</button>
+      </form>
+    </main>
+  </body>
+</html>

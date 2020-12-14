@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "name": "Black Ranger",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut in urna rhoncus erat pretium molestie. Cras urna nisl, venenatis id odio id, placerat interdum odio. Sed at fermentum sem. Duis quis dignissim arcu, sed aliquet felis. Mauris ligula velit, tincidunt at rutrum et, vulputate in nulla. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Phasellus finibus interdum efficitur. Aenean sed turpis lacus. Morbi hendrerit imperdiet tellus, at hendrerit turpis sollicitudin et.",
+    "price": 1500,
+    "image": "https://http2.mlstatic.com/D_NQ_NP_609274-MLA27675594296_072018-O.jpg",
+    "category": "Funko Pop"
+  },
+  {
+    "id": 2,
+    "name": "Código Secreto",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut in urna rhoncus erat pretium molestie. Cras urna nisl, venenatis id odio id, placerat interdum odio. Sed at fermentum sem. Duis quis dignissim arcu, sed aliquet felis. Mauris ligula velit, tincidunt at rutrum et, vulputate in nulla. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Phasellus finibus interdum efficitur. Aenean sed turpis lacus. Morbi hendrerit imperdiet tellus, at hendrerit turpis sollicitudin et.",
+    "price": 3490,
+    "image": "https://http2.mlstatic.com/juego-de-mesa-codigo-secreto-devir-D_NQ_NP_775940-MLA32831523498_112019-F.webp",
+    "category": "Juego de Mesa"
+  },
+  {
+    "id": 3,
+    "name": "My Hero Academia",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut in urna rhoncus erat pretium molestie. Cras urna nisl, venenatis id odio id, placerat interdum odio. Sed at fermentum sem. Duis quis dignissim arcu, sed aliquet felis. Mauris ligula velit, tincidunt at rutrum et, vulputate in nulla. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Phasellus finibus interdum efficitur. Aenean sed turpis lacus. Morbi hendrerit imperdiet tellus, at hendrerit turpis sollicitudin et.",
+    "price": 495,
+    "image": "https://http2.mlstatic.com/manga-my-hero-academia-ivrea-varios-tomos-D_NQ_NP_929797-MLA43715948714_102020-F.webp",
+    "category": "Manga"
+  },
+  {
+    "id": 4,
+    "name": "Mazo Yu-gi-oh!",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut in urna rhoncus erat pretium molestie. Cras urna nisl, venenatis id odio id, placerat interdum odio. Sed at fermentum sem. Duis quis dignissim arcu, sed aliquet felis. Mauris ligula velit, tincidunt at rutrum et, vulputate in nulla. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Phasellus finibus interdum efficitur. Aenean sed turpis lacus. Morbi hendrerit imperdiet tellus, at hendrerit turpis sollicitudin et.",
+    "price": 2790,
+    "image": "https://http2.mlstatic.com/mazo-yu-gi-oh-structure-deck-spirit-charmers-original-D_NQ_NP_720264-MLA44125459162_112020-F.webp",
+    "category": "TCG"
+  },
+  {
+    "id": 5,
+    "name": "Marv - Sin City",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut in urna rhoncus erat pretium molestie. Cras urna nisl, venenatis id odio id, placerat interdum odio. Sed at fermentum sem. Duis quis dignissim arcu, sed aliquet felis. Mauris ligula velit, tincidunt at rutrum et, vulputate in nulla. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Phasellus finibus interdum efficitur. Aenean sed turpis lacus. Morbi hendrerit imperdiet tellus, at hendrerit turpis sollicitudin et.",
+    "price": 4450,
+    "image": "https://http2.mlstatic.com/figura-sin-city-select-marv-diamond-select-D_NQ_NP_840816-MLA31622681272_072019-F.webp",
+    "category": "Juguete"
+  }
+]

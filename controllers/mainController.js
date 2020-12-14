@@ -1,6 +1,9 @@
+const getProducts = require('../utils/getProduct');
+
 const controller = {
   index: (req, res) => {
-    res.render('index');
+    const products = getProducts();
+    res.render('index', { products: products });
   },
   carrito: (req, res) => {
     res.render('carrito');
