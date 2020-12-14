@@ -13,40 +13,24 @@
     margin-left: 30px;
   }
 
-  /* Product Page */
-  .product-main {
-    flex-direction: column;
-    align-items: center;
-  }
-
   /* Login Page */
   .login-container {
-    flex-direction: column;
-    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 40px;
   }
 
-  /* Login Page  */
   .login-box {
-    align-items: stretch;
+    width: 100%;
   }
 
-  /* Login Page */
-  .icons {
-    flex-direction: column;
-    align-items: center;
-    align-content: space-between;
-    margin-top: -240px;
-    margin-left: 300px;
-  }
-
-  /* Login Page */
   #image-test {
     display: none;
   }
 
-  /* Login Page */
-  .lines-separation {
-    display: none;
+  /* Product Page */
+  .product-main {
+    flex-direction: column;
+    align-items: center;
   }
 
   .main-image {
