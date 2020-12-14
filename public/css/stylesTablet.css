@@ -56,4 +56,9 @@
   .left-images img {
     padding-right: 15px;
   }
+
+  /* Home */
+  .button-main {
+    margin-top: 150px;
+  }
 }

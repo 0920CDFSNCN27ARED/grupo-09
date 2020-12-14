@@ -30,19 +30,17 @@
 .image-icon {
   border-radius: 1000px;
   width: 125px;
+  margin: 0px 10px;
 }
 
 .categories-text {
   font-size: 24px;
   margin-top: 10px;
   color: #3d3d3d;
+  margin-bottom: 35px;
 }
 
 .description-text {
   width: 50%;
   margin-left: 25%;
-}
-
-.margin-top30 {
-  margin-top: 30px;
 }

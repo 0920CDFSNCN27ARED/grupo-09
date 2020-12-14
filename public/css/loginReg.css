@@ -31,7 +31,7 @@
 .user-pass-submit {
   margin-bottom: 15px;
   border: solid 2px #1a1919;
-  padding: 15px 0px;
+  padding: 15px 15px;
   width: 100%;
   display: block;
 }
@@ -44,11 +44,6 @@
 
 .apellido {
   width: 49%;
-}
-
-.user-pass-submit::placeholder {
-  padding-left: 10px;
-  font-size: 14px;
 }
 
 .new-users {
