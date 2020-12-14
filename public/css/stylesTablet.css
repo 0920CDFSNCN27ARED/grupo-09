@@ -19,6 +19,36 @@
     align-items: center;
   }
 
+  /* Login Page */
+  .login-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  /* Login Page  */
+  .login-box {
+    align-items: stretch;
+  }
+
+  /* Login Page */
+  .icons {
+    flex-direction: column;
+    align-items: center;
+    align-content: space-between;
+    margin-top: -240px;
+    margin-left: 300px;
+  }
+
+  /* Login Page */
+  #image-test {
+    display: none;
+  }
+
+  /* Login Page */
+  .lines-separation {
+    display: none;
+  }
+
   .main-image {
     width: 100%;
   }
