@@ -20,18 +20,13 @@ let publicPath = path.resolve(__dirname, 'public/');
 
 const productRoutes = require('./routes/productRoutes');
 const mainRoutes = require('./routes/mainRoutes');
+const userRoutes = require('./routes/userRoutes');
 
 app.use(express.static(publicPath));
 
 app.use('/', mainRoutes);
-
-app.use('/carrito', mainRoutes);
-
 app.use('/products', productRoutes);
-
-app.use('/login', mainRoutes);
-
-app.use('/register', mainRoutes);
+app.use('/users', userRoutes);
 
 app.listen(3000, () => {
   console.log('Servidor iniciado en http://localhost:3000');
