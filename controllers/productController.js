@@ -1,4 +1,6 @@
 const getProducts = require('../utils/getProduct');
+const uploadProducts = require('../utils/uploadProducts');
+const { swal } = require('sweetalert');
 
 const controller = {
   index: (req, res) => {
@@ -27,8 +29,18 @@ const controller = {
   },
 
   create: (req, res) => {
-    const message = 'Product Created: ' + JSON.stringify(req.body);
-    res.send(message);
+    let products = getProducts();
+    let product = req.body;
+    let id = products[products.length - 1].id + 1;
+
+    products.push({
+      id: id,
+      ...product,
+    });
+
+    uploadProducts(products);
+
+    res.redirect('/products');
   },
 
   showEdit: (req, res) => {
@@ -49,6 +61,21 @@ const controller = {
   edit: (req, res) => {
     const message = 'Product Edited: ' + JSON.stringify(req.body);
     res.send(message);
+  },
+
+  delete: (req, res) => {
+    let products = getProducts();
+    let id = req.params.id;
+    let product = products.find((prod) => {
+      return prod.id == id;
+    });
+    let index = products.indexOf(product);
+
+    products.splice(index, 1);
+
+    uploadProducts(products);
+
+    res.redirect('/products');
   },
 };
 

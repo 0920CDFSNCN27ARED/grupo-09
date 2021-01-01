@@ -16,6 +16,7 @@
           name="name"
           placeholder="Ej: Cartas Magic"
           class="input"
+          required
         />
         <label for="description">Descripcion:</label>
         <textarea
@@ -25,15 +26,16 @@
           class="input"
           cols="30"
           rows="10"
+          required
         ></textarea>
         <label for="price">Precio:</label>
-        <input type="number" id="price" name="price" class="input" />
+        <input type="number" id="price" name="price" class="input" required />
 
         <label for="image">URL de la imagen:</label>
-        <input type="text" id="image" name="image" class="input" />
+        <input type="text" id="image" name="image" class="input" required />
 
         <label for="category">Categoria:</label>
-        <select id="category" name="category" class="input">
+        <select id="category" name="category" class="input" required >
           <option value="Manga">Manga</option>
           <option value="Comics">Comics</option>
           <option value="Juegos">Juegos</option>
