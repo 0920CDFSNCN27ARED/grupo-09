@@ -59,8 +59,21 @@ const controller = {
   },
 
   edit: (req, res) => {
-    const message = 'Product Edited: ' + JSON.stringify(req.body);
-    res.send(message);
+    const products = getProducts();
+    let requiredProduct = products.find((prod) => {
+      return prod.id == req.params.id;
+    });
+
+    let index = products.indexOf(requiredProduct);
+    let editedProduct = {
+      id: index + 1,
+      ...req.body,
+    };
+
+    products.splice(index, 1, editedProduct);
+
+    uploadProducts(products);
+    res.redirect('/products');
   },
 
   delete: (req, res) => {

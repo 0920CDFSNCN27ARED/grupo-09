@@ -84,6 +84,10 @@ h2 {
   padding-top: 30px;
 }
 
+.padding-left30 {
+  padding-left: 30px;
+}
+
 .display-none {
   display: none;
 }
@@ -95,6 +99,10 @@ h2 {
 
 .space-between {
   justify-content: space-between;
+}
+
+.justify-center {
+  justify-content: center;
 }
 
 .margin-top30 {

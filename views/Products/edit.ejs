@@ -13,25 +13,32 @@
         method="POST"
         class="form-container"
       >
+        <h2 class="padding-bot30">Editando: <%= product.name %></h2>
         <label for="name">Nombre del Producto:</label>
         <input
           type="text"
           id="name"
           name="name"
-          placeholder="Ej: Cartas Magic"
+          placeholder="<%= product.name %>"
           class="input"
         />
         <label for="description">Descripcion:</label>
         <textarea
           id="description"
           name="description"
-          placeholder="Ej: Mazo de 50 cartas Magic..."
+          placeholder="<%= product.description %>"
           class="input"
           cols="30"
           rows="10"
         ></textarea>
         <label for="price">Precio:</label>
-        <input type="number" id="price" name="price" class="input" />
+        <input
+          type="number"
+          id="price"
+          name="price"
+          class="input"
+          placeholder="<%= product.price %>"
+        />
 
         <label for="image">URL de la imagen:</label>
         <input type="text" id="image" name="image" class="input" />
@@ -47,6 +54,15 @@
         </select>
 
         <button type="submit" class="form-button red">Guardar Producto</button>
+      </form>
+      <form
+        class="form-container justify-center"
+        method="POST"
+        action="/products/<%= product.id %>?_method=DELETE"
+      >
+        <button type="delete" class="form-button red margin-bot15">
+          Eliminar Producto
+        </button>
       </form>
     </main>
   </body>

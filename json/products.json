@@ -38,5 +38,21 @@
     "price": 4450,
     "image": "https://http2.mlstatic.com/figura-sin-city-select-marv-diamond-select-D_NQ_NP_840816-MLA31622681272_072019-F.webp",
     "category": "Juguete"
+  },
+  {
+    "id": 7,
+    "name": "Mortal Kombat - Funko Pop",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu vestibulum ex. Integer tortor tortor, aliquet vitae sollicitudin nec, euismod eu felis. Mauris faucibus, quam eu convallis euismod, velit nisl imperdiet felis, sed venenatis ante urna et dui. Curabitur sed ante commodo, consequat magna iaculis, sagittis nibh. In accumsan tempus lacinia. Fusce viverra vulputate tincidunt. Suspendisse volutpat placerat scelerisque. Aenean sed neque mollis, placerat turpis eget, auctor dui. Donec vehicula accumsan risus, id ullamcorper metus volutpat eget. Quisque pulvinar turpis ex, sed hendrerit leo sodales non. Nam sed quam quis lacus blandit hendrerit et porta magna. ",
+    "price": "3500",
+    "image": "https://http2.mlstatic.com/funko-pop-games-mortal-kombat-D_NQ_NP_860126-MLA41122051611_032020-F.webp",
+    "category": "Juguetes"
+  },
+  {
+    "id": 8,
+    "name": "Batman",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu vestibulum ex. Integer tortor tortor, aliquet vitae sollicitudin nec, euismod eu felis. Mauris faucibus, quam eu convallis euismod, velit nisl imperdiet felis, sed venenatis ante urna et dui. Curabitur sed ante commodo, consequat magna iaculis, sagittis nibh. In accumsan tempus lacinia. Fusce viverra vulputate tincidunt. Suspendisse volutpat placerat scelerisque. Aenean sed neque mollis, placerat turpis eget, auctor dui. Donec vehicula accumsan risus, id ullamcorper metus volutpat eget. Quisque pulvinar turpis ex, sed hendrerit leo sodales non. Nam sed quam quis lacus blandit hendrerit et porta magna.",
+    "price": "1200",
+    "image": "https://http2.mlstatic.com/comic-dc-batman-caminante-nocturno-ovni-press-D_NQ_NP_826863-MLA44042496421_112020-F.webp",
+    "category": "Comics"
   }
 ]
