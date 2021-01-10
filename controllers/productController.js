@@ -35,7 +35,11 @@ const controller = {
 
     products.push({
       id: id,
-      ...product,
+      name: req.body.name,
+      description: req.body.description,
+      price: req.body.price,
+      image: req.file.filename,
+      category: req.body.category,
     });
 
     uploadProducts(products);
@@ -64,10 +68,17 @@ const controller = {
       return prod.id == req.params.id;
     });
 
+    const filename = req.file ? req.file.filename : requiredProduct.image;
+
     let index = products.indexOf(requiredProduct);
+
     let editedProduct = {
-      id: index + 1,
-      ...req.body,
+      id: requiredProduct.id,
+      name: req.body.name,
+      description: req.body.description,
+      price: req.body.price,
+      image: filename,
+      category: req.body.category,
     };
 
     products.splice(index, 1, editedProduct);

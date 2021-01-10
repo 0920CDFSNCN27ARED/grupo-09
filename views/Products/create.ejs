@@ -8,7 +8,12 @@
     <%- include("../partials/header") %>
 
     <main>
-      <form action="/products" method="POST" class="form-container">
+      <form
+        action="/products"
+        method="POST"
+        class="form-container"
+        enctype="multipart/form-data"
+      >
         <label for="name">Nombre del Producto:</label>
         <input
           type="text"
@@ -31,11 +36,11 @@
         <label for="price">Precio:</label>
         <input type="number" id="price" name="price" class="input" required />
 
-        <label for="image">URL de la imagen:</label>
-        <input type="text" id="image" name="image" class="input" required />
+        <label for="image">Imagen:</label>
+        <input type="file" id="image" name="image" class="padding20" required />
 
         <label for="category">Categoria:</label>
-        <select id="category" name="category" class="input" required >
+        <select id="category" name="category" class="input" required>
           <option value="Manga">Manga</option>
           <option value="Comics">Comics</option>
           <option value="Juegos">Juegos</option>

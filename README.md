@@ -32,10 +32,23 @@ Para lograr lo anterior pensamos no pedir datos del cliente hasta que el carrito
 - Guardaremos tiempos de navegacion sobre productos e historial de compras de los productos del cliente, para que cuando vuelva al sitio le mismo pueda tener el dinamismo en ofrecer novedades o similares a compras anteriores, basaremos toda esta info en tags.
 
 ## Referencias
-- https://store.cloud9.gg/
+
 - https://starcitygames.com/
+
+  - La elegimos como referencia debido a que es un e-commerce de una tematica similar y, a pesar de que el diseño no nos gusta demasiado, nos interesó el poderoso motor de busqueda que emplea, el cual le permite a los usuarios filtrar los miles de productos de acuerdo a sus preferencias.
+
 - https://www.ovnipress.net/
+
+  - Este e-commerce tambien se encuentra en un nicho de mercado cercano al nuestro. Ademas, nos parecio atractivo el diseño de las product-cards.
+
+- https://store.cloud9.gg/
+
+  - De esta página nos gustó el diseño de la Homepage. El uso de una paleta de colores limitada (solo dos colores) nos parece una buena forma de lograr un diseño moderno y minimalista.
+
 - https://invictvs.com.ar/tienda/
 
+  - Este es el e-commerce mas cercano al nuestro ya que vende todos los mismos productos que nosotros (comics, manga, juegos de mesa y de rol) La forma en la que divide y categoriza los productos nos puede ser de gran ayuda a la hora de clasificar y jerarquizar los nuestros.
+
 ## Trello
+
 -https://trello.com/b/CfOC7FkJ/0920-grupo09-tiendacomics

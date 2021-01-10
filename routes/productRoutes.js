@@ -3,12 +3,17 @@ const router = express.Router();
 const path = require('path');
 const multer = require('multer');
 
+const imagesPath = path.resolve(__dirname, '../public/img/products/');
+
 var storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    cb(null, '/img/products');
+    cb(null, imagesPath);
   },
   filename: function (req, file, cb) {
-    cb(null, file.fieldname + '-' + Date.now() + path.extname(file.filename));
+    cb(
+      null,
+      file.fieldname + '-' + Date.now() + path.extname(file.originalname)
+    );
   },
 });
 
@@ -25,9 +30,9 @@ router.get('/:id', productsController.getOne);
 
 router.get('/:id/edit', productsController.showEdit);
 
-router.post('/', upload.any(), productsController.create);
+router.post('/', upload.single('image'), productsController.create);
 
-router.put('/:id', productsController.edit);
+router.put('/:id', upload.single('image'), productsController.edit);
 
 router.delete('/:id', productsController.delete);
 

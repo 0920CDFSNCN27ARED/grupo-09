@@ -12,6 +12,7 @@
         action="/products/<%= product.id %>?_method=PUT"
         method="POST"
         class="form-container"
+        enctype="multipart/form-data"
       >
         <h2 class="padding-bot30">Editando: <%= product.name %></h2>
         <label for="name">Nombre del Producto:</label>
@@ -21,6 +22,7 @@
           name="name"
           placeholder="<%= product.name %>"
           class="input"
+          required
         />
         <label for="description">Descripcion:</label>
         <textarea
@@ -30,6 +32,7 @@
           class="input"
           cols="30"
           rows="10"
+          required
         ></textarea>
         <label for="price">Precio:</label>
         <input
@@ -38,10 +41,11 @@
           name="price"
           class="input"
           placeholder="<%= product.price %>"
+          required
         />
 
-        <label for="image">URL de la imagen:</label>
-        <input type="text" id="image" name="image" class="input" />
+        <label for="image">Imagen:</label>
+        <input type="file" id="image" name="image" class="padding20" required />
 
         <label for="category">Categoria:</label>
         <select id="category" name="category" class="input">
