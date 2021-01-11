@@ -22,3 +22,15 @@ Sprint 3:
 - Stop Doing: No realizar las tareas que le corresponden a cada uno.
 
 - Start Doing: Juntarse con mas frecuencia. Intentar elegir dias para hacer reuniones y avanzar en el proyecto juntos.
+
+Sprint 4:
+
+- Keep Doing: Este sprint 4 pudimos re-ordenarnos, todo producto de estar mas en contacto y fomentar el dialogo del grupo
+
+- Less of: estar fuera de contacto, y no hablar sobre el proyecto final.
+
+- More of: comenzar a ver el modelo del producto final, esta avanzando el projecto y hay decisiones de sprint pasados qye debemos resolver
+
+- Stop Doing: No realizar las tareas que le corresponden a cada uno, dejar de estar en contacto
+
+- Start Doing: hablar con mayor frecuencia de adonde queremos con ciertas decisiones del projecto, tenemos que seguir tirando ideas para eriquecer el proyecto y no solo cumplir con los sprints.
