@@ -178,5 +178,12 @@
     "password": "q0awJX",
     "category": "user",
     "image": "user_20.jpg"
+  },
+  {
+    "id": 21,
+    "name": "Prueba 1",
+    "lastname": "prueba",
+    "email": "prueba@mail.com",
+    "pass": "$2b$12$6gUlhVJjibwqZSKUKC5adO23aQE/TCsHoIfE/CwppnBhQIauCjvGq"
   }
 ]

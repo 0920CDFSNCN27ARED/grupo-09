@@ -1,35 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <%- include("partials/head", {title: "Register", styles:
+    <%- include("../partials/head", {title: "Login", styles:
     "/css/loginReg.css"}); %>
   </head>
   <body>
-    <%- include("partials/header") %>
+    <%- include("../partials/header") %>
     <main>
       <div class="background">
         <div class="login-container">
           <div class="login-box">
             <form action="validar.php" method="POST">
-              <h1>Crear una Cuenta</h1>
+              <h1>Ingresar</h1>
               <div class="new-users">
-                <p>¿Ya sos Usuario?</p>
-                <a href="#" id="ingresa"><p>Ingresá</p></a>
+                <p>¿Usuario Nuevo?</p>
+                <a href="#" id="cuenta"><p>Crear una Cuenta</p></a>
               </div>
               <form action="">
                 <input
                   type="text"
-                  placeholder="Nombre"
-                  class="user-pass-submit name"
-                />
-                <input
-                  type="text"
-                  placeholder="Apellido"
-                  class="user-pass-submit apellido"
-                />
-                <input
-                  type="email"
-                  placeholder="Email"
+                  placeholder="Nombre de Usuario"
                   class="user-pass-submit"
                 />
                 <input
@@ -37,10 +27,12 @@
                   placeholder="Contraseña"
                   class="user-pass-submit"
                 />
+                <input type="checkbox" />
+                <p id="recuerdame">Recuérdame</p>
                 <input
                   type="submit"
                   class="user-pass-submit ingresar"
-                  value="Crear una Cuenta"
+                  value="Ingresar"
                 />
                 <div class="lines-separation">
                   <p id="ingresa-cuentas-fav">Ingresa con</p>
@@ -63,10 +55,10 @@
               </form>
             </form>
           </div>
-          <img src="/img/register_img.png" id="image-test" />
+          <img src="/img/Login_img.png" id="image-test" />
         </div>
       </div>
     </main>
-    <%- include("partials/footer") %>
+    <%- include("../partials/footer") %>
   </body>
 </html>

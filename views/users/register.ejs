@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include("../partials/head", {title: "Register", styles:
+    "/css/loginReg.css"}); %>
+  </head>
+  <body>
+    <%- include("../partials/header") %>
+    <main>
+      <div class="background">
+        <div class="login-container">
+          <div class="login-box">
+            <form
+              action="/users/register"
+              method="POST"
+              enctype="multipart/form-data"
+            >
+              <h1>Crear una Cuenta</h1>
+              <div class="new-users">
+                <p>¿Ya sos Usuario?</p>
+                <a href="#" id="ingresa"><p>Ingresá</p></a>
+              </div>
+              <input
+                type="text"
+                name="name"
+                placeholder="Nombre"
+                class="user-pass-submit name"
+              />
+              <input
+                type="text"
+                name="lastname"
+                placeholder="Apellido"
+                class="user-pass-submit apellido"
+              />
+              <input
+                type="email"
+                name="email"
+                placeholder="Email"
+                class="user-pass-submit"
+              />
+              <input
+                type="password"
+                name="pass"
+                placeholder="Contraseña"
+                class="user-pass-submit"
+              />
+              <input
+                type="submit"
+                class="user-pass-submit ingresar"
+                value="Crear una Cuenta"
+              />
+              <div class="lines-separation">
+                <p id="ingresa-cuentas-fav">Ingresa con</p>
+                <hr />
+              </div>
+              <div class="icons">
+                <span class="media-icons"
+                  ><i class="fab fa-google font25"></i
+                ></span>
+                <span class="media-icons"
+                  ><i class="fab fa-facebook-f font25"></i
+                ></span>
+                <span class="media-icons"
+                  ><i class="fab fa-instagram font25"></i
+                ></span>
+                <span class="media-icons"
+                  ><i class="fab fa-twitter font25"></i
+                ></span>
+              </div>
+            </form>
+          </div>
+          <img src="/img/register_img.png" id="image-test" />
+        </div>
+      </div>
+    </main>
+    <%- include("../partials/footer") %>
+  </body>
+</html>
