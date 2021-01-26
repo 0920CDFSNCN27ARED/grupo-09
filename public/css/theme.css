@@ -14,6 +14,10 @@ h2 {
   font-size: 16px;
 }
 
+.font20 {
+  font-size: 20px;
+}
+
 .red {
   background-color: #eb5a43;
 }
@@ -95,6 +99,11 @@ h2 {
 .flex-row {
   display: flex;
   flex-direction: row;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
 }
 
 .space-between {

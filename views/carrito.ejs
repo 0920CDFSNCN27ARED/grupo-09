@@ -7,64 +7,81 @@
   <body>
     <%- include("partials/header") %>
     <main>
-      <div id="cart">
+      <div class="cart">
+        <div class="product">
+          <p class="font20 bold" id="first-title">Producto</p>
+          <p class="font20 bold">Precio</p>
+          <p class="font20 bold">Cantidad</p>
+          <p class="font20 bold">Total</p>
+        </div>
+        <hr class="light" />
         <div class="product">
           <img
             src="https://cdn.discordapp.com/attachments/593289910203580443/775445024145801216/unknown.png"
             alt="Producto 1"
           />
           <div class="desc">
-            <p class="name">Baby Yoda</p>
-            <p class="type">Funko Pop</p>
+            <p class="bold">Baby Yoda</p>
+            <p>Funko Pop</p>
           </div>
           <p class="precio">$1800</p>
           <p class="cantidad">1</p>
           <p class="total">$1800</p>
         </div>
+        <hr class="light" />
         <div class="product">
           <img
             src="https://cdn.discordapp.com/attachments/593289910203580443/775445596077162517/unknown.png"
             alt="Producto 2"
           />
           <div class="desc">
-            <p class="name">Iron Man</p>
-            <p class="type">Funko Pop</p>
+            <p class="bold">Iron Man</p>
+            <p>Funko Pop</p>
           </div>
           <p class="precio">$1500</p>
           <p class="cantidad">2</p>
           <p class="total">$3000</p>
         </div>
+        <hr class="light" />
         <div class="product">
           <img
             src="https://cdn.discordapp.com/attachments/593289910203580443/775445858425503744/unknown.png"
             alt="Producto 3"
           />
           <div class="desc">
-            <p class="name">Capitan America</p>
-            <p class="type">Action Figure</p>
+            <p class="bold">Capitan America</p>
+            <p>Action Figure</p>
           </div>
           <p class="precio">$1500</p>
           <p class="cantidad">1</p>
           <p class="total">$1500</p>
         </div>
+        <hr class="light" />
       </div>
-      <aside class="black" id="summary">
-        <h2 class="bold" id="summary-title">Resumen</h2>
-        <div class="summary-item subtotal">
-          <p class="self-start">Subtotal</p>
-          <p class="self-end">$6300</p>
+      <aside class="black">
+        <p class="bold font25">Resumen</p>
+        <hr />
+        <div class="flex-row space-between">
+          <p>Subtotal</p>
+          <p>$6300</p>
         </div>
-        <div class="summary-item">
-          <p class="self-start">Impuesto (21%)</p>
-          <p class="self-end">$1323</p>
-          <p class="self-start">Envío</p>
-          <p class="self-end">$253</p>
+        <hr />
+        <div class="flex-row space-between">
+          <p class="margin-bot15">Impuesto (21%)</p>
+          <p>$1323</p>
         </div>
-        <div class="summary-item bold">
-          <h2 class="self-start">Total</h2>
-          <h2 class="self-end">$7876</h2>
+        <div class="flex-row space-between">
+          <p>Envío</p>
+          <p>$253</p>
         </div>
-        <button type="submit" class="red button">Comprar</button>
+        <hr />
+        <div class="flex-row space-between">
+          <p class="font25 bold">Total</p>
+          <p class="font25 bold">$7876</p>
+        </div>
+        <button type="submit" class="red button white-font font25 bold">
+          Comprar
+        </button>
       </aside>
     </main>
     <%- include("partials/footer") %>
