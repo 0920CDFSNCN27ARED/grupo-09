@@ -3,6 +3,10 @@ const router = express.Router();
 const path = require('path');
 const multer = require('multer');
 
+const assertSignedOut = require('../middlewares/auth/assert-signed-out');
+const assertSignedIn = require('../middlewares/auth/assert-signed-in');
+const assertIsAdmin = require('../middlewares/auth/assert-is-admin');
+
 const imagesPath = path.resolve(__dirname, '../public/img/products/');
 
 var storage = multer.diskStorage({
@@ -24,11 +28,21 @@ const { route } = require('./mainRoutes');
 
 router.get('/', productsController.index);
 
-router.get('/create', productsController.showCreate);
+router.get(
+  '/create',
+  assertSignedIn,
+  assertIsAdmin,
+  productsController.showCreate
+);
 
 router.get('/:id', productsController.getOne);
 
-router.get('/:id/edit', productsController.showEdit);
+router.get(
+  '/:id/edit',
+  assertSignedIn,
+  assertIsAdmin,
+  productsController.showEdit
+);
 
 router.post('/', upload.single('image'), productsController.create);
 

@@ -22,6 +22,7 @@ const controller = {
 
     const newUser = {
       id: newId,
+      type: 'user',
       ...req.body,
       pass: bcrypt.hashSync(req.body.pass, 12),
     };
@@ -30,6 +31,20 @@ const controller = {
     saveUsers(users);
 
     res.redirect('/');
+  },
+  login: (req, res) => {
+    const users = getUsers();
+    const user = users.find((user) => {
+      return (
+        user.email == req.body.email &&
+        bcrypt.compareSync(req.body.pass, user.pass)
+      );
+    });
+
+    if (!user) return res.redirect('/users/login');
+
+    req.session.loggedUserId = user.id;
+    return res.redirect('/');
   },
 };
 

@@ -16,6 +16,13 @@
       <a href="/" class="header-links">Sobre Nosotros</a>
     </div>
   </div>
+  <div>
+    <% if (user) { %>
+    <p class="white-font">Logged in - <%= user.name %></p>
+    <% }else { %>
+    <p></p>
+    <% } %>
+  </div>
 
   <div class="header-section">
     <a href="/" class="fas fa-search header-icons"></a>
