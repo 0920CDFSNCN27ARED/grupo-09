@@ -44,6 +44,13 @@ const controller = {
     if (!user) return res.redirect('/users/login');
 
     req.session.loggedUserId = user.id;
+
+    if (req.body.remember != undefined) {
+      res.cookie('remember', user.id, {
+        maxAge: 1000 * 60 * 60 * 24 * 7,
+      });
+    }
+
     return res.redirect('/');
   },
 };

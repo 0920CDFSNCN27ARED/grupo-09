@@ -3,7 +3,10 @@ const express = require('express');
 let app = express();
 const bodyParser = require('body-parser');
 const session = require('express-session');
+const cookieParser = require('cookie-parser');
+
 const authenticate = require('./middlewares/auth/authenticate');
+const rememberMe = require('./middlewares/auth/rememberMe');
 
 const jsonParser = bodyParser.json();
 
@@ -12,6 +15,8 @@ app.use(bodyParser.json());
 
 const methodOverride = require('method-override');
 app.use(methodOverride('_method'));
+
+app.use(cookieParser());
 
 app.set('view engine', 'ejs');
 app.set('views', __dirname + '/views');
@@ -35,6 +40,7 @@ app.use(
     saveUninitialized: true,
   })
 );
+app.use(rememberMe);
 app.use(authenticate);
 
 app.use('/', mainRoutes);
