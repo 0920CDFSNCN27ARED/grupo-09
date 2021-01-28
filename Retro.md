@@ -34,3 +34,15 @@ Sprint 4:
 - Stop Doing: No realizar las tareas que le corresponden a cada uno, dejar de estar en contacto
 
 - Start Doing: hablar con mayor frecuencia de adonde queremos con ciertas decisiones del projecto, tenemos que seguir tirando ideas para eriquecer el proyecto y no solo cumplir con los sprints.
+
+Sprint 5:
+
+- Keep Doing: Seguir cumpliendo con los objetivos y entregando todo a tiempo.
+
+- Less of: No comunicarse en el grupo, no organizarnos bien como equipo.
+
+- More of: Empezar a organizar mejor los sprints desde un comienzo, estableciendo claramente cuales seran las tareas de cada uno.
+
+- Stop Doing: No aparecer en el grupo, no comunicarse.
+
+- Start Doing: Hacer juntadas de comienzo de sprint para organizarlo y dividir las tareas de forma clara.
