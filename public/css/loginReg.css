@@ -116,3 +116,15 @@
   height: 50px;
   margin-top: 5px;
 }
+
+.crear-cuenta {
+  display: inline;
+  padding: 5px;
+  border: 2px solid black;
+  font-size: 16px;
+  font-weight: 600;
+  color: #fcfcfc;
+  background-color: #eb5a43;
+  letter-spacing: 1px;
+  cursor: pointer;
+}

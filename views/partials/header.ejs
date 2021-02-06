@@ -16,17 +16,21 @@
       <a href="/" class="header-links">Sobre Nosotros</a>
     </div>
   </div>
-  <div>
-    <% if (user) { %>
-    <p class="white-font">Logged in - <%= user.name %></p>
-    <% }else { %>
-    <p></p>
-    <% } %>
-  </div>
 
   <div class="header-section">
     <a href="/" class="fas fa-search header-icons"></a>
-    <a href="/" class="fas fa-user header-icons"></a>
+    <div class="dropdown">
+      <a href="/" class="fas fa-user header-icons"></a>
+      <div class="dropdown-content">
+        <% if(user) { %>
+        <p class="white-font"><%= user.name %></p>
+        <p class="gray-font">Log Out</p>
+        <% }else { %>
+        <a href="users/login"><p class="gray-font">Ingresar</p></a>
+        <a href="users/register"><p class="gray-font">Crear Cuenta</p></a>
+        <% } %>
+      </div>
+    </div>
     <a
       href="/carrito"
       class="fas fa-shopping-cart header-icons"
