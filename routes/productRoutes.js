@@ -44,10 +44,22 @@ router.get(
   productsController.showEdit
 );
 
-router.post('/', upload.single('image'), productsController.create);
+router.post(
+  '/',
+  assertSignedIn,
+  assertIsAdmin,
+  upload.single('image'),
+  productsController.create
+);
 
-router.put('/:id', upload.single('image'), productsController.edit);
+router.put(
+  '/:id',
+  assertSignedIn,
+  assertIsAdmin,
+  upload.single('image'),
+  productsController.edit
+);
 
-router.delete('/:id', productsController.delete);
+router.delete('/:id', assertSignedIn, assertIsAdmin, productsController.delete);
 
 module.exports = router;

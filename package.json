@@ -4,7 +4,7 @@
   "description": "**¿Qué productos o servicios brindará nuestro sitio? ¿Quién será nuestra audiencia\r objetivo? ¿Cómo ajustaremos nuestra oferta a ese público?**",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon -e js app.js"
   },
   "repository": {
     "type": "git",
