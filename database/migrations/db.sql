@@ -7,7 +7,7 @@ SET FOREIGN_KEY_CHECKS = 0;
 DROP TABLE IF EXISTS `addresses`;
 CREATE TABLE `addresses`  (
   `id` int(11) NOT NULL,
-  `costumer_id` int(11) NOT NULL,
+  `customer_id` int(11) NOT NULL,
   `city` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `address` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `postal_code` tinyint(4) NOT NULL,
@@ -15,15 +15,15 @@ CREATE TABLE `addresses`  (
   `province` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `floor` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE,
-  INDEX `fk_costumer`(`costumer_id`) USING BTREE,
-  CONSTRAINT `fk_costumer` FOREIGN KEY (`costumer_id`) REFERENCES `costumers` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
+  INDEX `fk_customer`(`customer_id`) USING BTREE,
+  CONSTRAINT `fk_customer` FOREIGN KEY (`customer_id`) REFERENCES `customers` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
 ) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
--- Table structure for costumers
+-- Table structure for customers
 -- ----------------------------
-DROP TABLE IF EXISTS `costumers`;
-CREATE TABLE `costumers`  (
+DROP TABLE IF EXISTS `customers`;
+CREATE TABLE `customers`  (
   `id` int(11) NOT NULL,
   `email` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `password` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
@@ -120,13 +120,13 @@ CREATE TABLE `shopping_carts`  (
   `shipping_address_id` int(11) NOT NULL,
   `total` decimal(10, 2) NOT NULL,
   `qty` int(11) NOT NULL,
-  `costumer_id` int(11) NOT NULL,
+  `customer_id` int(11) NOT NULL,
   PRIMARY KEY (`id`) USING BTREE,
-  INDEX `costumer`(`costumer_id`) USING BTREE,
+  INDEX `customer`(`customer_id`) USING BTREE,
   INDEX `payment_method`(`payment_method_id`) USING BTREE,
   INDEX `shipping_address`(`shipping_address_id`) USING BTREE,
   INDEX `billing_address`(`billing_address_id`) USING BTREE,
-  CONSTRAINT `costumer` FOREIGN KEY (`costumer_id`) REFERENCES `costumers` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `customer` FOREIGN KEY (`customer_id`) REFERENCES `customers` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `payment_method` FOREIGN KEY (`payment_method_id`) REFERENCES `payment_methods` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `billing_address` FOREIGN KEY (`billing_address_id`) REFERENCES `addresses` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `shipping_address` FOREIGN KEY (`shipping_address_id`) REFERENCES `addresses` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
