@@ -22,5 +22,21 @@
     "lastname": "Admin",
     "email": "Urza-admin@mail.com",
     "pass": "$2b$12$W0dTf0iUCAnzsIVcXfuWQ.OC94qyofIFprtCfX1JjbAuECrhzgoUK"
+  },
+  {
+    "id": 4,
+    "type": "user",
+    "name": "Matias",
+    "lastname": "Cerdeira",
+    "email": "maticerdeira@mail.com",
+    "pass": "$2b$12$HPm4LjuTTQXUlP33jLMDSeWbQQjNQs.Yu.1ruNV5SJHtDGnzEfiHy"
+  },
+  {
+    "id": 5,
+    "type": "user",
+    "name": "prueba",
+    "lastname": "prueba",
+    "email": "prueba@gmail.com",
+    "pass": "$2b$12$hqzrlnuc58ZPO9XRKnzpfO1ACpVLv/3kKb/78/w/6Yo3gixZWE9am"
   }
 ]

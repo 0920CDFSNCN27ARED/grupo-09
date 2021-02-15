@@ -9,7 +9,6 @@ function rememberMe(req, res, next) {
     const user = users.find((user) => {
       return user.id == req.cookies.remember;
     });
-    console.log('aaaaah!' + user);
     if (user) {
       req.session.loggedUserId = user.id;
     }
