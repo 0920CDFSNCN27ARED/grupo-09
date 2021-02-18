@@ -10,6 +10,15 @@
       <% for( let i = 0; i < products.length; i++ ) { %> <%-
       include("../partials/productCard",{product:products[i]}) %> <% } %>
     </main>
-    <%- include("../partials/footer") %>
+    <!-- Boton de crear producto -->
+    <% if(user != null && user.type == "admin"){ %>
+    <div class="text-center red padding20">
+      <a href="/products/create" class="white-font font20 bold">
+        Crear Producto
+      </a>
+    </div>
+    <% } %>
+
+    <footer><%- include("../partials/footer") %></footer>
   </body>
 </html>
