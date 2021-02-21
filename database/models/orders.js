@@ -12,30 +12,30 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.INTEGER,
       allowNull: false,
     },
-     created_at: {
+    created_at: {
       type: DataTypes.DATE,
       allowNull: false,
     },
-      updated_at: {
+    updated_at: {
       type: DataTypes.DATE,
       allowNull: false,
     },
-      price: {
-      type: DataTypes.DECIMAL(10,2),
+    price: {
+      type: DataTypes.DECIMAL(10, 2),
       allowNull: false,
     },
-});
-  Orders.associate = function (models){
-      Orders.belongsTo(models.Category,{
-          as: "category",
-          foreingKey: "category_id"
-      });
-    }
-     Orders.associate = function (models) {
-       Orders.belongsTo(models.Products, {
-         as: 'products',
-         foreingKey: 'products_id',
-       });
-     };
-    return Orders;
-}
+  });
+  Orders.associate = function (models) {
+    Orders.belongsTo(models.ShoppingCarts, {
+      as: 'shopping_cart',
+      foreingKey: 'cart_id',
+    });
+
+    Orders.belongsTo(models.Products, {
+      as: 'products',
+      foreingKey: 'products_id',
+    });
+  };
+
+  return Orders;
+};

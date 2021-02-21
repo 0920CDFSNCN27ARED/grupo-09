@@ -14,5 +14,12 @@ module.exports = (sequelize, DataTypes) => {
     },
   });
 
+  PaymentMethods.associate = function (models) {
+    PaymentMethods.hasMany(models.ShoppingCarts, {
+      as: 'shopping_carts',
+      foreingKey: 'payment_method_id',
+    });
+  };
+
   return PaymentMethods;
 };

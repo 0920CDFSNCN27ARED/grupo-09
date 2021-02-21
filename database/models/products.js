@@ -1,5 +1,5 @@
 'use strict';
- /* los nombres de la variable suelen ser en Mayuscula no plural*/
+/* los nombres de la variable suelen ser en Mayuscula no plural*/
 module.exports = (sequelize, DataTypes) => {
   const Products = sequelize.define('Products', {
     id: {
@@ -52,12 +52,17 @@ module.exports = (sequelize, DataTypes) => {
       as: 'category',
       foreingKey: 'category_id',
     });
-  };
-  Products.associate = function (models) {
+
     Products.belongsTo(models.Variant, {
       as: 'variant',
       foreingKey: 'variant_id',
     });
+
+    Products.hasMany(models.Orders, {
+      as: 'orders',
+      foreingKey: 'product_id',
+    });
   };
+
   return Products;
 };

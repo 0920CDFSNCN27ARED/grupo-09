@@ -13,6 +13,13 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
     },
   });
-  
+
+  ProductsCategories.associate = function (models) {
+    ProductsCategories.hasMany(models.Products, {
+      as: 'products',
+      foreingKey: 'category_id',
+    });
+  };
+
   return ProductsCategories;
 };

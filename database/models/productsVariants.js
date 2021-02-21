@@ -14,5 +14,12 @@ module.exports = (sequelize, DataTypes) => {
     },
   });
 
+  ProductsVariants.associate = function (models) {
+    ProductsVariants.hasMany(models.Products, {
+      as: 'products',
+      foreingKey: 'variant_id',
+    });
+  };
+
   return ProductsVariants;
 };

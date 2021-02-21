@@ -12,33 +12,42 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING(255),
       allowNull: false,
     },
-     address: {
+    address: {
       type: DataTypes.STRING(255),
       allowNull: false,
     },
-     postal_code: {
+    postal_code: {
       type: DataTypes.STRING(255),
       allowNull: false,
     },
-     country: {
+    country: {
       type: DataTypes.STRING(255),
       allowNull: false,
     },
-     province: {
+    province: {
       type: DataTypes.STRING(255),
       allowNull: false,
     },
-     floor: {
+    floor: {
       type: DataTypes.STRING(255),
       allowNull: false,
     },
-    
+  });
+  Adresses.associate = function (models) {
+    Adresses.belongsTo(models.Customers, {
+      as: 'customers',
+      foreingKey: 'customer_id',
     });
-      Adresses.associate = function (models){
-      Adresses.belongsTo(models.Customers,{
-          as: "customers",
-          foreingKey: "customer_id"
-        })
-    }
-    return Adresses;
+
+    Adresses.hasMany(models.ShoppingCarts, {
+      as: 'shopping_carts_billing',
+      foreingKey: 'billing_address_id',
+    });
+
+    Adresses.hasMany(models.ShoppingCarts, {
+      as: 'shopping_carts_shipping',
+      foreingKey: 'shipping_address_id',
+    });
+  };
+  return Adresses;
 };

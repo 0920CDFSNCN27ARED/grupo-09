@@ -31,24 +31,27 @@ module.exports = (sequelize, DataTypes) => {
       as: 'payment_method',
       foreingKey: 'payment_method_id',
     });
-  };
-  ShoppingCarts.associate = function (models) {
-    ShoppingCarts.belongsTo(models.BillingAdress, {
+
+    ShoppingCarts.belongsTo(models.Adress, {
       as: 'billing_address',
       foreingKey: 'billing_address_id',
     });
-  };
-  ShoppingCarts.associate = function (models) {
+
     ShoppingCarts.belongsTo(models.Customers, {
       as: 'customers',
       foreingKey: 'customer_id',
     });
-  };
-  ShoppingCarts.associate = function (models) {
+
     ShoppingCarts.belongsTo(models.Adreses, {
-      as: 'adresses',
+      as: 'shipping_adresses',
       foreingKey: 'shipping_addreses_id',
     });
+
+    ShoppingCarts.hasMany(models.Orders, {
+      as: 'orders',
+      foreingKey: 'cart_id',
+    });
   };
+
   return ShoppingCarts;
 };
