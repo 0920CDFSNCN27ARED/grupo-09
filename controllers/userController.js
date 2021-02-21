@@ -3,6 +3,7 @@ const getProducts = require('../utils/getProduct');
 const getUsers = require('../utils/getUsers.js');
 const saveUsers = require('../utils/saveUsers.js');
 const bcrypt = require('bcrypt');
+const { cookie } = require('express-validator');
 
 const controller = {
   showLogin: (req, res) => {
@@ -53,6 +54,19 @@ const controller = {
     }
 
     return res.redirect('/');
+  },
+
+  logOut: (req, res) => {
+    const cookies = req.cookies;
+
+    for (prop in cookies) {
+      if (cookies.hasOwnProperty(prop)) {
+        res.clearCookie('remember');
+      }
+    }
+    req.session.destroy((err) => {
+      res.redirect('/users/login');
+    });
   },
 };
 

@@ -54,6 +54,13 @@
             <button type="button" id="button">Añadir al Carrito</button>
             </form>
             </div>
+            <% if(user != null && user.type == "admin"){ %>
+              <div id="button">
+                 <a href="/products/<%= requiredProduct.id %>/edit" class="white-font font20 bold">
+                    Editar Producto
+                 </a>
+              </div>
+            <% } %>
       </section>
     </main>
     <section class="similar-products side-bars">
