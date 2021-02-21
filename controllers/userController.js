@@ -1,3 +1,4 @@
+let db = require('../database/models');
 const getProducts = require('../utils/getProduct');
 const getUsers = require('../utils/getUsers.js');
 const saveUsers = require('../utils/saveUsers.js');

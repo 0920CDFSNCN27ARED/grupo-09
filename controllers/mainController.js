@@ -1,3 +1,4 @@
+let db = require('../database/models');
 const getProducts = require('../utils/getProduct');
 
 const controller = {

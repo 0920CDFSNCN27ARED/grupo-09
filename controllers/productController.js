@@ -1,3 +1,5 @@
+/* requiero el modelo y lo guardo en DB*/
+let db = require('../database/models');
 const getProducts = require('../utils/getProduct');
 const uploadProducts = require('../utils/uploadProducts');
 const { swal } = require('sweetalert');

@@ -49,6 +49,6 @@ module.exports = (sequelize, DataTypes) => {
       as: 'adresses',
       foreingKey: 'shipping_addreses_id',
     });
-  }
+  };
   return ShoppingCarts;
 };

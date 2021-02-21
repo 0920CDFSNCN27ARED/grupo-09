@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const path = require('path');
 const multer = require('multer');
+let db = require('../database/models');
 
 const assertSignedOut = require('../middlewares/auth/assert-signed-out');
 const assertSignedIn = require('../middlewares/auth/assert-signed-in');

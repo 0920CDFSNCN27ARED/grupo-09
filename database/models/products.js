@@ -1,5 +1,5 @@
 'use strict';
-
+ /* los nombres de la variable suelen ser en Mayuscula no plural*/
 module.exports = (sequelize, DataTypes) => {
   const Products = sequelize.define('Products', {
     id: {
@@ -44,6 +44,8 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING(255),
       allowNull: false,
     },
+    /* en caso de tener que definir el nombre de la tabla:
+  lo defino aca como tableName: "nombretabla"*/
   });
   Products.associate = function (models) {
     Products.belongsTo(models.Category, {

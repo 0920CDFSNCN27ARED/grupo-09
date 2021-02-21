@@ -1,7 +1,7 @@
 'use strict';
 
 module.exports = (sequelize, DataTypes) => {
-  const ProductsCategories = sequelize.define('productCategories', {
+  const ProductsCategories = sequelize.define('ProductCategories', {
     id: {
       type: DataTypes.INTEGER,
       primaryKey: true,
@@ -14,5 +14,5 @@ module.exports = (sequelize, DataTypes) => {
     },
   });
   
-  return roductsCategories;
+  return ProductsCategories;
 };
