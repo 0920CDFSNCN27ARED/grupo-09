@@ -1,9 +1,10 @@
 let db = require('../database/models');
-const getProducts = require('../utils/getProduct');
+const productsService = require('../services/productsService');
 
 const controller = {
-  index: (req, res) => {
-    const products = getProducts();
+  index: async (req, res) => {
+    const products = await productsService.findAll();
+
     res.render('index', { products: products });
   },
   carrito: (req, res) => {

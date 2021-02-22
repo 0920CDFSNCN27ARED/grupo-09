@@ -1,14 +1,11 @@
-const getUsers = require('../../utils/getUsers');
+const costumersService = require('../../services/customersService');
 
-function rememberMe(req, res, next) {
+async function rememberMe(req, res, next) {
   if (
     req.cookies.remember != undefined &&
     req.session.loggedUserId == undefined
   ) {
-    const users = getUsers();
-    const user = users.find((user) => {
-      return user.id == req.cookies.remember;
-    });
+    const user = await costumersService.findOne(req.cookies.remember);
     if (user) {
       req.session.loggedUserId = user.id;
     }

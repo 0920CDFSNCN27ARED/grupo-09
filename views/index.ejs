@@ -60,7 +60,7 @@
           sed odit nemo exercitationem dolorum voluptatum, nobis unde!
         </p>
         <div class="product-card-container">
-          <% for(i=0; i <5; i++){ %> <%- include("partials/productCard",
+          <% for(i=0; i < products.length; i++){ %> <%- include("partials/productCard",
           {product:products[i]}) %> <% } %>
         </div>
       </section>
@@ -72,7 +72,7 @@
           sed odit nemo exercitationem dolorum voluptatum, nobis unde!
         </p>
         <div class="product-card-container padding-bot30">
-          <% for(i=0; i <5; i++){ %> <%- include("partials/productCard",
+          <% for(i=0; i < products.length; i++){ %> <%- include("partials/productCard",
           {product:products[i]}) %> <% } %>
         </div>
       </section>

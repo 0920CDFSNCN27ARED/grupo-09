@@ -28,12 +28,12 @@ module.exports = (sequelize, DataTypes) => {
   Orders.associate = function (models) {
     Orders.belongsTo(models.ShoppingCarts, {
       as: 'shopping_cart',
-      foreingKey: 'cart_id',
+      foreignKey: 'cart_id',
     });
 
     Orders.belongsTo(models.Products, {
       as: 'products',
-      foreingKey: 'products_id',
+      foreignKey: 'products_id',
     });
   };
 

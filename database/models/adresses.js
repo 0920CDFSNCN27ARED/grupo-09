@@ -36,17 +36,17 @@ module.exports = (sequelize, DataTypes) => {
   Adresses.associate = function (models) {
     Adresses.belongsTo(models.Customers, {
       as: 'customers',
-      foreingKey: 'customer_id',
+      foreignKey: 'customer_id',
     });
 
     Adresses.hasMany(models.ShoppingCarts, {
       as: 'shopping_carts_billing',
-      foreingKey: 'billing_address_id',
+      foreignKey: 'billing_address_id',
     });
 
     Adresses.hasMany(models.ShoppingCarts, {
       as: 'shopping_carts_shipping',
-      foreingKey: 'shipping_address_id',
+      foreignKey: 'shipping_address_id',
     });
   };
   return Adresses;

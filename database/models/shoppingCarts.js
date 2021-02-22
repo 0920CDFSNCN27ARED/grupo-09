@@ -9,19 +9,19 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
     },
     created_at: {
-      name: DataTypes.DATE,
+      type: DataTypes.DATE,
       allowNull: false,
     },
     updated_at: {
-      name: DataTypes.DATE,
+      type: DataTypes.DATE,
       allowNull: false,
     },
     total: {
-      name: DataTypes.DECIMAL(10, 2),
+      type: DataTypes.DECIMAL(10, 2),
       allowNull: false,
     },
     qty: {
-      name: DataTypes.STRING(255),
+      type: DataTypes.STRING(255),
       allowNull: false,
     },
   });
@@ -29,27 +29,27 @@ module.exports = (sequelize, DataTypes) => {
   ShoppingCarts.associate = function (models) {
     ShoppingCarts.belongsTo(models.PaymentMethods, {
       as: 'payment_method',
-      foreingKey: 'payment_method_id',
+      foreignKey: 'payment_method_id',
     });
 
-    ShoppingCarts.belongsTo(models.Adress, {
+    ShoppingCarts.belongsTo(models.Adresses, {
       as: 'billing_address',
-      foreingKey: 'billing_address_id',
+      foreignKey: 'billing_address_id',
     });
 
     ShoppingCarts.belongsTo(models.Customers, {
       as: 'customers',
-      foreingKey: 'customer_id',
+      foreignKey: 'customer_id',
     });
 
-    ShoppingCarts.belongsTo(models.Adreses, {
+    ShoppingCarts.belongsTo(models.Adresses, {
       as: 'shipping_adresses',
-      foreingKey: 'shipping_addreses_id',
+      foreignKey: 'shipping_addreses_id',
     });
 
     ShoppingCarts.hasMany(models.Orders, {
       as: 'orders',
-      foreingKey: 'cart_id',
+      foreignKey: 'cart_id',
     });
   };
 

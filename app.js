@@ -17,11 +17,14 @@ const methodOverride = require('method-override');
 app.use(methodOverride('_method'));
 
 app.use(cookieParser());
+app.use(
+  session({
+    secret: 'Nuestro mensaje secretoooo',
+  })
+);
 
 app.set('view engine', 'ejs');
 app.set('views', __dirname + '/views');
-
-let registerHTML = path.resolve(__dirname, 'views/register.html');
 
 let publicPath = path.resolve(__dirname, 'public/');
 
@@ -33,13 +36,6 @@ const userRoutes = require('./routes/userRoutes');
 
 app.use(express.static(publicPath));
 
-app.use(
-  session({
-    secret: 'Nuestro mensaje secreto',
-    resave: true,
-    saveUninitialized: true,
-  })
-);
 app.use(rememberMe);
 app.use(authenticate);
 

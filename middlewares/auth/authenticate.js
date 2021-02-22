@@ -1,15 +1,11 @@
-const getUsers = require('../../utils/getUsers');
+const costumersService = require('../../services/customersService');
 
-function authenticate(req, res, next) {
+async function authenticate(req, res, next) {
   const id = req.session.loggedUserId;
 
   if (!id) return next();
 
-  const users = getUsers();
-
-  const loggedUser = users.find((user) => {
-    return user.id == id;
-  });
+  const loggedUser = await costumersService.findOne(id);
 
   if (!loggedUser) {
     delete req.session.loggedUserId;
