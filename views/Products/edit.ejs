@@ -49,12 +49,9 @@
 
         <label for="category">Categoria:</label>
         <select id="category" name="category" class="input">
-          <option value="Manga">Manga</option>
-          <option value="Comics">Comics</option>
-          <option value="Juegos">Juegos</option>
-          <option value="Rol">Rol</option>
-          <option value="Juguetes">Juguetes</option>
-          <option value="TCG">TCG</option>
+          <% categories.forEach(category => { %>
+            <option value="<%= category.id %>"><%= category.name %></option>
+          <% })%>
         </select>
 
         <button type="submit" class="form-button red">Guardar Producto</button>

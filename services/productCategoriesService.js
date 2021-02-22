@@ -1,14 +1,14 @@
-const { ProductsCategories } = require('../database/models');
+const { ProductCategories } = require('../database/models');
 
 module.exports = {
   findOne: async (id) => {
-    return await ProductsCategories.findByPk(id);
+    return await ProductCategories.findByPk(id);
   },
   findAll: async () => {
-    return await ProductsCategories.findAll();
+    return await ProductCategories.findAll();
   },
   create: async (payload) => {
-    return await ProductsCategories.create({
+    return await ProductCategories.create({
       ...payload,
     });
   },
@@ -19,7 +19,7 @@ module.exports = {
     });
   },
   delete: async (id) => {
-    await ProductsCategories.destroy({
+    await ProductCategories.destroy({
       where: {
         id,
       },

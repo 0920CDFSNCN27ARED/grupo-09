@@ -24,8 +24,8 @@ const controller = {
     });
   },
 
-  showCreate: (req, res) => {
-    const categories = productsCategoriesService.findAll();
+  showCreate: async (req, res) => {
+    const categories = await productsCategoriesService.findAll();
 
     res.render('products/create', { categories: categories });
   },
@@ -46,6 +46,8 @@ const controller = {
 
   showEdit: (req, res) => {
     const requiredProduct = productsService.findOne(req.params.id);
+    const categories = await productsCategoriesService.findAll();
+
     if (requiredProduct == null) {
       return res
         .status(404)
@@ -53,6 +55,7 @@ const controller = {
     }
     res.render('products/edit', {
       product: requiredProduct,
+      categories: categories
     });
   },
 
