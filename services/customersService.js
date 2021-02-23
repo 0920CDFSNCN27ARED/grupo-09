@@ -15,9 +15,13 @@ module.exports = {
     return await Customers.findAll();
   },
   create: async (payload) => {
-    return await Customers.create({
-      ...payload,
-    });
+    try {
+      return await Customers.create({
+        ...payload,
+      });
+    } catch (err) {
+      console.log(err);
+    }
   },
   update: async (id, payload) => {
     const customer = await this.findOne(id);

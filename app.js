@@ -20,6 +20,8 @@ app.use(cookieParser());
 app.use(
   session({
     secret: 'Nuestro mensaje secretoooo',
+    resave: true,
+    saveUninitialized: true,
   })
 );
 

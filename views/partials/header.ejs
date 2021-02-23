@@ -23,7 +23,7 @@
       <div class="fas fa-user header-icons"></div>
       <div class="dropdown-content">
         <% if(user) { %>
-        <p class="white-font"><%= user.name %></p>
+        <p class="white-font"><%= user.first_name %></p>
         <a href="/users/logOut"><p class="gray-font">Log Out</p></a>
         <% }else { %>
         <a href="/users/login"><p class="gray-font">Ingresar</p></a>

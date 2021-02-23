@@ -44,7 +44,7 @@ const controller = {
     res.redirect('/products');
   },
 
-  showEdit: (req, res) => {
+  showEdit: async (req, res) => {
     const requiredProduct = productsService.findOne(req.params.id);
     const categories = await productsCategoriesService.findAll();
 
@@ -55,7 +55,7 @@ const controller = {
     }
     res.render('products/edit', {
       product: requiredProduct,
-      categories: categories
+      categories: categories,
     });
   },
 

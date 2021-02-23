@@ -3,7 +3,7 @@ const costumersService = require('../../services/customersService');
 async function authenticate(req, res, next) {
   const id = req.session.loggedUserId;
 
-  if (!id) return next();
+  if (id == undefined || id == null) return next();
 
   const loggedUser = await costumersService.findOne(id);
 
