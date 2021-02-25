@@ -26,7 +26,7 @@ module.exports = {
       ...payload,
     });
   },
-  update: async (id, payload) => {
+  update: async function (id, payload) {
     const product = await this.findOne(id);
     await product.update({
       ...payload,

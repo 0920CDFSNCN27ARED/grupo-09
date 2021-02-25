@@ -94,7 +94,7 @@ CREATE TABLE `products`  (
   `size` double NOT NULL,
   `weight` double NOT NULL,
   `image` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
-  `price` decimal(10, 2) NOT NULL,
+  `price` int(11) NOT NULL,
   `qty_sales` int(11) NOT NULL,
   `qty_stock` int(11) NULL DEFAULT NULL,
   `sku` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,

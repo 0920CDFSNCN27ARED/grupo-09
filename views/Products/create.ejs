@@ -33,6 +33,57 @@
           rows="10"
           required
         ></textarea>
+
+        <label for="size">Tamaño:</label>
+        <input
+          type="text"
+          id="size"
+          name="size"
+          placeholder="Ej: 10x10 cm"
+          class="input"
+          required
+        />
+
+        <label for="weight">Peso:</label>
+        <input
+          type="text"
+          id="weight"
+          name="weight"
+          placeholder="Ej: 100 gr"
+          class="input"
+          required
+        />
+
+        <label for="qty_sales">Cantidad de Ventas:</label>
+        <input
+          type="text"
+          id="qty_sales"
+          name="qty_sales"
+          placeholder="1"
+          class="input"
+          required
+        />
+
+        <label for="qty_stock">Cantidad en Stock:</label>
+        <input
+          type="text"
+          id="qty_stock"
+          name="qty_stock"
+          placeholder="1"
+          class="input"
+          required
+        />
+
+        <label for="sku">SKU:</label>
+        <input
+          type="text"
+          id="sku"
+          name="sku"
+          placeholder="123456789"
+          class="input"
+          required
+        />
+
         <label for="price">Precio:</label>
         <input type="number" id="price" name="price" class="input" required />
 
@@ -42,7 +93,14 @@
         <label for="category">Categoria:</label>
         <select id="category" name="category" class="input" required>
           <% categories.forEach(category => { %>
-            <option value="<%= category.id %>"><%= category.name %></option>
+          <option value="<%= category.id %>"><%= category.name %></option>
+          <% })%>
+        </select>
+
+        <label for="variant">Variante:</label>
+        <select id="variant" name="variant" class="input" required>
+          <% variants.forEach(variant => { %>
+          <option value="<%= variant.id %>"><%= variant.name %></option>
           <% })%>
         </select>
 

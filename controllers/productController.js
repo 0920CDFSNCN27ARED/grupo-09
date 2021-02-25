@@ -2,17 +2,18 @@
 let db = require('../database/models');
 const productsService = require('../services/productsService');
 const productsCategoriesService = require('../services/productCategoriesService');
+const productsVariantsService = require('../services/productsVariantsService');
 const { swal } = require('sweetalert');
 
 const controller = {
-  index: (req, res) => {
-    const products = productsService.findAll();
+  index: async (req, res) => {
+    const products = await productsService.findAll();
     res.render('products/allProducts', { products: products });
   },
 
-  getOne: (req, res) => {
-    const products = productsService.findAll();
-    const requiredProduct = productsService.findOne(req.params.id);
+  getOne: async (req, res) => {
+    const products = await productsService.findAll();
+    const requiredProduct = await productsService.findOne(req.params.id);
 
     if (requiredProduct == null) {
       return res.status(404).send('404 not found');
@@ -26,8 +27,12 @@ const controller = {
 
   showCreate: async (req, res) => {
     const categories = await productsCategoriesService.findAll();
+    const variants = await productsVariantsService.findAll();
 
-    res.render('products/create', { categories: categories });
+    res.render('products/create', {
+      categories: categories,
+      variants: variants,
+    });
   },
 
   create: (req, res) => {
@@ -36,17 +41,24 @@ const controller = {
     productsService.create({
       name: product.name,
       description: product.description,
+      size: product.size,
+      weight: product.weight,
+      qty_sales: product.qty_sales,
+      qty_stock: product.qty_stock,
+      sku: product.sku,
       price: product.price,
       image: req.file.filename,
       category_id: product.category,
+      variant_id: product.variant,
     });
 
     res.redirect('/products');
   },
 
   showEdit: async (req, res) => {
-    const requiredProduct = productsService.findOne(req.params.id);
+    const requiredProduct = await productsService.findOne(req.params.id);
     const categories = await productsCategoriesService.findAll();
+    const variants = await productsVariantsService.findAll();
 
     if (requiredProduct == null) {
       return res
@@ -56,23 +68,31 @@ const controller = {
     res.render('products/edit', {
       product: requiredProduct,
       categories: categories,
+      variants: variants,
     });
   },
 
-  edit: (req, res) => {
-    let requiredProduct = productsService.findOne(req.params.id);
+  edit: async (req, res) => {
+    let requiredProduct = await productsService.findOne(req.params.id);
 
     const filename = req.file ? req.file.filename : requiredProduct.image;
+    const product = req.body;
 
     let editedProduct = {
-      name: req.body.name,
-      description: req.body.description,
-      price: req.body.price,
+      name: product.name,
+      description: product.description,
+      size: product.size,
+      weight: product.weight,
+      qty_sales: product.qty_sales,
+      qty_stock: product.qty_stock,
+      sku: product.sku,
+      price: product.price,
       image: filename,
-      category_id: req.body.category,
+      category_id: product.category,
+      variant_id: product.variant,
     };
 
-    productsService.update(requiredProduct.id, editedProduct);
+    await productsService.update(requiredProduct.id, editedProduct);
 
     res.redirect('/products');
   },

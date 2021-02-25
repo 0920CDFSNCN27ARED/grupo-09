@@ -31,8 +31,8 @@ router.get('/', productsController.index);
 
 router.get(
   '/create',
-  // assertSignedIn,
-  // assertIsAdmin,
+  assertSignedIn,
+  assertIsAdmin,
   productsController.showCreate
 );
 
@@ -47,8 +47,8 @@ router.get(
 
 router.post(
   '/',
-  // assertSignedIn,
-  // assertIsAdmin,
+  assertSignedIn,
+  assertIsAdmin,
   upload.single('image'),
   productsController.create
 );
