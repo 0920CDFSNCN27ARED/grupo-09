@@ -36,6 +36,8 @@ const productRoutes = require('./routes/productRoutes');
 const mainRoutes = require('./routes/mainRoutes');
 const userRoutes = require('./routes/userRoutes');
 
+const productAPIRoutes = require('./routes/api/productRoutes');
+
 app.use(express.static(publicPath));
 
 app.use(rememberMe);
@@ -44,6 +46,7 @@ app.use(authenticate);
 app.use('/', mainRoutes);
 app.use('/products', productRoutes);
 app.use('/users', userRoutes);
+app.use('/api/products', productAPIRoutes);
 
 app.listen(3000, () => {
   console.log('Servidor iniciado en http://localhost:3000');

@@ -7,7 +7,7 @@ values
 ("Rol"),
 ("Juguetes"),
 ("TCG"),
-("Manga")
+("Manga");
 
 
 -- Variantes --
@@ -17,7 +17,7 @@ values
 ("variante 2"),
 ("variante 3"),
 ("variante 4"),
-("variante 5")
+("variante 5");
 
 
 -- Usuarios --
