@@ -11,20 +11,27 @@ const controller = {
     res.render('users/register');
   },
 
-  register: (req, res) => {
+  register: async (req, res) => {
     const newUser = {
       type: 'user',
       ...req.body,
       password: bcrypt.hashSync(req.body.pass, 12),
     };
 
-    costumersService.create(newUser);
+    await costumersService.create(newUser);
+
+    //Keeps you logged in after register
+    const user = await costumersService.findOneLogin(newUser.email);
+    req.session.loggedUserId = user.id;
 
     res.redirect('/');
   },
 
   login: async (req, res) => {
     const user = await costumersService.findOneLogin(req.body.email);
+
+    if (user == null) return res.redirect('/users/login');
+
     const pass = bcrypt.compareSync(req.body.pass, user.password);
 
     if (!pass) return res.redirect('/users/login');
