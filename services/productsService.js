@@ -1,30 +1,20 @@
-const {
-  Products,
-  ProductCategories,
-  ProductVariants,
-} = require('../database/models');
+const { Products } = require('../database/models');
 
 module.exports = {
-  findOne: async id => {
+  findOne: async (id) => {
     return await Products.findByPk(id, {
-      include: [
-        { model: ProductVariants, as: 'variant' },
-        { model: ProductCategories, as: 'category' },
-      ],
+      include: ['variant', 'category'],
     });
   },
-  findAll: async config => {
+  findAll: async (config) => {
     return await Products.findAll(
       {
-        include: [
-          { model: ProductVariants, as: 'variant' },
-          { model: ProductCategories, as: 'category' },
-        ],
+        include: ['variant', 'category'],
       },
       config
     );
   },
-  create: async payload => {
+  create: async (payload) => {
     return await Products.create({
       ...payload,
     });
@@ -35,7 +25,7 @@ module.exports = {
       ...payload,
     });
   },
-  delete: async id => {
+  delete: async (id) => {
     await Products.destroy({
       where: {
         id,

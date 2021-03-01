@@ -1,14 +1,14 @@
-const { Orders, Products, ShoppingCarts } = require('../database/models');
+const { Orders } = require('../database/models');
 
 module.exports = {
   findOne: async (id) => {
     return await Orders.findByPk(id, {
-      include: [{ model: Products }, { model: ShoppingCarts }],
+      include: ['products', 'shopping_cart'],
     });
   },
   findAll: async () => {
     return await Orders.findAll({
-      include: [{ model: Products }, { model: ShoppingCarts }],
+      include: ['products', 'shopping_cart'],
     });
   },
   create: async (payload) => {
