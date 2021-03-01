@@ -1,5 +1,6 @@
 let db = require('../database/models');
 const productsService = require('../services/productsService');
+const customersService = require('../services/customersService');
 
 const controller = {
   index: async (req, res) => {
