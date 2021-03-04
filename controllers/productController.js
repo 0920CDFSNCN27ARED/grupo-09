@@ -7,8 +7,25 @@ const { swal } = require('sweetalert');
 
 const controller = {
   index: async (req, res) => {
-    const products = await productsService.findAll();
-    res.render('products/allProducts', { products: products });
+    const categories = await productsCategoriesService.findAll();
+    let products;
+    const { search, category, orderBy } = req.query;
+
+    console.log(req.query);
+
+    if (!req.query.search && !req.query.category && !req.query.orderBy) {
+      products = await productsService.findAll();
+    } else {
+      products = await productsService.search(search, category, orderBy);
+    }
+
+    res.render('products/allProducts', {
+      products: products,
+      categories: categories,
+      search: search,
+      selectedCategory: category,
+      orderBy: orderBy,
+    });
   },
 
   getOne: async (req, res) => {

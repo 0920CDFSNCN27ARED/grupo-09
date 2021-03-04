@@ -2,10 +2,13 @@ const {
   Products,
   ProductCategories,
   ProductVariants,
+  Sequelize,
 } = require('../database/models');
 
+const Op = Sequelize.Op;
+
 module.exports = {
-  findOne: async id => {
+  findOne: async (id) => {
     return await Products.findByPk(id, {
       include: [
         { model: ProductVariants, as: 'variant' },
@@ -13,7 +16,7 @@ module.exports = {
       ],
     });
   },
-  findAll: async config => {
+  findAll: async (config) => {
     return await Products.findAll(
       {
         include: [
@@ -24,7 +27,35 @@ module.exports = {
       config
     );
   },
-  create: async payload => {
+
+  search: async (search, category, orderBy) => {
+    if (category == 'any') {
+      return await Products.findAll({
+        include: [
+          { model: ProductVariants, as: 'variant' },
+          { model: ProductCategories, as: 'category' },
+        ],
+        where: {
+          name: { [Op.like]: `%${search}%` },
+        },
+        order: [[orderBy, 'ASC']],
+      });
+    } else {
+      return await Products.findAll({
+        include: [
+          { model: ProductVariants, as: 'variant' },
+          { model: ProductCategories, as: 'category' },
+        ],
+        where: {
+          name: { [Op.like]: `%${search}%` },
+          '$category.id$': category,
+        },
+        order: [[orderBy, 'ASC']],
+      });
+    }
+  },
+
+  create: async (payload) => {
     return await Products.create({
       ...payload,
     });
@@ -35,7 +66,7 @@ module.exports = {
       ...payload,
     });
   },
-  delete: async id => {
+  delete: async (id) => {
     await Products.destroy({
       where: {
         id,

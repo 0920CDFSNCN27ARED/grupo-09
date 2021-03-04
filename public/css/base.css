@@ -177,6 +177,32 @@ header {
   cursor: pointer;
 }
 
+/* Products */
+
+.search-container {
+  width: 40%;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+}
+
+.search-bar {
+  padding: 10px;
+  border-radius: 5px;
+  width: 100%;
+  border: none;
+}
+
+.filters-container {
+  width: 48%;
+}
+
+.filters {
+  padding: 5px;
+  border-radius: 5px;
+  width: 100%;
+  border: none;
+}
+
 /* Footer */
 
 .footer-icons {

@@ -6,9 +6,86 @@
   </head>
   <body>
     <%- include("../partials/header") %>
-    <main class="product-card-container side-bars">
-      <% for( let i = 0; i < products.length; i++ ) { %> <%-
-      include("../partials/productCard",{product:products[i]}) %> <% } %>
+    <main>
+      <div style="background-image: url(../img/comics.jpg)">
+        <h2 class="text-center white-font padding-top-bot30 letter-spacing">
+          Encontrá lo que estas buscando
+        </h2>
+        <div class="flex-row justify-center padding-bot30">
+          <div class="search-container">
+            <form action="/products" method="GET" class="padding20">
+              <% if(search == "" || !search) { %>
+              <input
+                type="text"
+                name="search"
+                class="search-bar"
+                placeholder="Busca por producto, marca y mas..."
+              />
+              <% }else{ %>
+              <input
+                type="text"
+                name="search"
+                class="search-bar"
+                value="<%= search %> "
+              />
+
+              <% } %>
+              <div class="flex-row space-between">
+                <div class="margin-top30 filters-container">
+                  <h3 class="white-font margin-bot10">Categorias</h3>
+                  <select
+                    id="category"
+                    name="category"
+                    class="filters"
+                    required
+                  >
+                    <option value="any">Cualquiera</option>
+                    <% categories.forEach(category => { %> <%
+                    if(selectedCategory == category.id){ %>
+                    <option value="<%= category.id %>" selected="selected">
+                      <%= category.name %>
+                    </option>
+                    <% }else{ %>
+                    <option value="<%= category.id %>">
+                      <%= category.name %>
+                    </option>
+                    <% } %> <% })%>
+                  </select>
+                </div>
+                <div class="margin-top30 filters-container">
+                  <h3 class="white-font margin-bot10">Ordenar por</h3>
+                  <select id="orderBy" name="orderBy" class="filters" required>
+                    <option value="name" <% if(orderBy == "name") { %>
+                        selected = "selected"
+                   <%}%>>Nombre</option>
+                    <option value="price" <% if(orderBy =="price") { %>
+                      selected = "selected"
+                    <%}%>>Precio</option>
+                    <option value="qty_sales" <% if(orderBy =="qty_sales") { %>
+                      selected = "selected"
+                    <%}%>>Lo mas vendido</option>
+                  </select>
+                </div>
+              </div>
+              <div class="w-100 flex-row justify-center">
+                <button type="submit" class="product-card-button margin-top30">
+                  Buscar Productos
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <% if(products.length == 0){ %>
+      <h3 class="padding20 text-center" style="margin-bottom: 24vh">
+        No se encontraron productos
+      </h3>
+      <% }else { %>
+      <div class="product-card-container side-bars">
+        <% for( let i = 0; i < products.length; i++ ) { %> <%-
+        include("../partials/productCard",{product:products[i]}) %> <% } %>
+      </div>
+      <% } %>
     </main>
     <!-- Boton de crear producto -->
     <% if(user != null && user.type == "admin"){ %>
@@ -17,8 +94,6 @@
         Crear Producto
       </a>
     </div>
-    <% } %>
-
-    <footer><%- include("../partials/footer") %></footer>
+    <% } %> <%- include("../partials/footer") %>
   </body>
 </html>
