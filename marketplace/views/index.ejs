@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <%- include("partials/head", {title: "Urza Comics", styles: "/css/home.css"}); %>
+    <%- include("partials/head", {title: "Urza Comics", styles:
+    "/css/home.css"}); %>
   </head>
   <body>
     <%- include("partials/header") %>
@@ -16,37 +17,55 @@
       </div>
       <section class="categories gray padding-top30">
         <div>
-          <a href="#" class="no-decoration">
+          <a
+            href="/products?search=&category=1&orderBy=name"
+            class="no-decoration"
+          >
             <img src="/img/board_cat_cropped.jpg" class="image-icon" />
             <h3 class="text-center categories-text">Juegos</h3>
           </a>
         </div>
         <div>
-          <a href="#" class="no-decoration">
+          <a
+            href="/products?search=&category=2&orderBy=name"
+            class="no-decoration"
+          >
             <img src="/img/comic_cat.png" class="image-icon" />
             <h3 class="text-center categories-text">Comics</h3>
           </a>
         </div>
         <div>
-          <a href="#" class="no-decoration">
+          <a
+            href="/products?search=&category=3&orderBy=name"
+            class="no-decoration"
+          >
             <img src="/img/rol_cat.jpg" class="image-icon" />
             <h3 class="text-center categories-text">Rol</h3>
           </a>
         </div>
         <div>
-          <a href="#" class="no-decoration">
+          <a
+            href="/products?search=&category=4&orderBy=name"
+            class="no-decoration"
+          >
             <img src="/img/toy_cat.png" class="image-icon" />
             <h3 class="text-center categories-text">Juguetes</h3>
           </a>
         </div>
         <div>
-          <a href="#" class="no-decoration">
+          <a
+            href="/products?search=&category=5&orderBy=name"
+            class="no-decoration"
+          >
             <img src="/img/yugi_cat.jpg" class="image-icon" />
             <h3 class="text-center categories-text">TCG</h3>
           </a>
         </div>
         <div>
-          <a href="#" class="no-decoration">
+          <a
+            href="/products?search=&category=6&orderBy=name"
+            class="no-decoration"
+          >
             <img src="/img/manga_cat.jpg" class="image-icon" />
             <h3 class="text-center categories-text">Manga</h3>
           </a>
@@ -60,8 +79,8 @@
           sed odit nemo exercitationem dolorum voluptatum, nobis unde!
         </p>
         <div class="product-card-container">
-          <% for(i=0; i < products.length; i++){ %> <%- include("partials/productCard",
-          {product:products[i]}) %> <% } %>
+          <% for(i=0; i < products.length; i++){ %> <%-
+          include("partials/productCard", {product:products[i]}) %> <% } %>
         </div>
       </section>
       <section class="margin-top30 gray side-bars">
@@ -72,8 +91,8 @@
           sed odit nemo exercitationem dolorum voluptatum, nobis unde!
         </p>
         <div class="product-card-container padding-bot30">
-          <% for(i=0; i < products.length; i++){ %> <%- include("partials/productCard",
-          {product:products[i]}) %> <% } %>
+          <% for(i=0; i < products.length; i++){ %> <%-
+          include("partials/productCard", {product:products[i]}) %> <% } %>
         </div>
       </section>
     </main>
