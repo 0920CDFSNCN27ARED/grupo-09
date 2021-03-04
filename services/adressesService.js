@@ -1,14 +1,14 @@
-const { Adresses, Customers } = require('../database/models');
+const { Adresses } = require('../database/models');
 
 module.exports = {
   findOne: async (id) => {
     return await Adresses.findByPk(id, {
-      include: [{ model: Customers }],
+      include: ['customers'],
     });
   },
   findAll: async () => {
     return await Adresses.findAll({
-      include: [{ model: Customers }],
+      include: ['customers'],
     });
   },
   create: async (payload) => {

@@ -1,26 +1,23 @@
-const {
-  ShoppingCarts,
-  Adresses,
-  Customers,
-  PaymentMethods,
-} = require('../database/models');
+const { ShoppingCarts } = require('../database/models');
 
 module.exports = {
   findOne: async (id) => {
     return await ShoppingCarts.findByPk(id, {
       include: [
-        { model: Adresses },
-        { model: Customers },
-        { model: PaymentMethods },
+        'billing_address',
+        'shipping_adresses',
+        'customers',
+        'payment_method',
       ],
     });
   },
   findAll: async () => {
     return await ShoppingCarts.findAll({
       include: [
-        { model: Adresses },
-        { model: Customers },
-        { model: PaymentMethods },
+        'billing_address',
+        'shipping_adresses',
+        'customers',
+        'payment_method',
       ],
     });
   },

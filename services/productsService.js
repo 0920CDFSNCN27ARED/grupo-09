@@ -10,19 +10,13 @@ const Op = Sequelize.Op;
 module.exports = {
   findOne: async (id) => {
     return await Products.findByPk(id, {
-      include: [
-        { model: ProductVariants, as: 'variant' },
-        { model: ProductCategories, as: 'category' },
-      ],
+      include: ['variant', 'category'],
     });
   },
   findAll: async (config) => {
     return await Products.findAll(
       {
-        include: [
-          { model: ProductVariants, as: 'variant' },
-          { model: ProductCategories, as: 'category' },
-        ],
+        include: ['variant', 'category'],
       },
       config
     );
