@@ -2,6 +2,7 @@ let db = require('../database/models');
 const costumersService = require('../services/customersService');
 const bcrypt = require('bcrypt');
 const { cookie } = require('express-validator');
+const {check, validationResult, body} = require ('express-validator');
 
 const controller = {
   showLogin: (req, res) => {
@@ -12,20 +13,33 @@ const controller = {
   },
 
   register: async (req, res) => {
-    const newUser = {
+   let errors = validationResult(req);
+    try {
+      if (errors.isEmpty()){
+         const newUser = {
       type: 'user',
       ...req.body,
       password: bcrypt.hashSync(req.body.pass, 12),
     };
 
     await costumersService.create(newUser);
-
+    
     //Keeps you logged in after register
     const user = await costumersService.findOneLogin(newUser.email);
     req.session.loggedUserId = user.id;
 
     res.redirect('/');
-  },
+
+    
+    } else {
+      return res.render('register', {
+        errors: errors.errors
+      }); 
+    }
+  } catch (error){
+    res.status(400).send(error.message)
+  }
+},
 
   login: async (req, res) => {
     const user = await costumersService.findOneLogin(req.body.email);

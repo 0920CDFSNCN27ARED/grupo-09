@@ -26,7 +26,7 @@ app.use(
 );
 
 app.set('view engine', 'ejs');
-app.set('views', __dirname + '/views');
+app.set('views', path.join(__dirname, 'views'));
 
 let publicPath = path.resolve(__dirname, 'public/');
 
@@ -37,6 +37,7 @@ const mainRoutes = require('./routes/mainRoutes');
 const userRoutes = require('./routes/userRoutes');
 
 const productAPIRoutes = require('./routes/api/productRoutes');
+const { dirname } = require('path');
 
 app.use(express.static(publicPath));
 

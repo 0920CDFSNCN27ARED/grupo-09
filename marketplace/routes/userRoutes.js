@@ -2,6 +2,8 @@ const express = require('express');
 const router = express.Router();
 const path = require('path');
 const multer = require('multer');
+const {check, validationREsult, body} = require ('express-validator');
+const fs = require('fs');
 
 const assertSignedOut = require('../middlewares/auth/assert-signed-out');
 const assertSignedIn = require('../middlewares/auth/assert-signed-in');
@@ -24,7 +26,14 @@ router.get('/login', assertSignedOut, usersController.showLogin);
 
 router.get('/register', assertSignedOut, usersController.showRegister);
 
-router.post('/register', usersController.register);
+router.post('/register', [
+  check('first_name').isLength({min:2}).withMessage('Este campo debe tener mas de 2 caracteres'),
+  check('first_name').isEmpty().withMessage('Este campo debe estar completo'),
+  body('email').custom(function(value){
+    /* toda la parta de DB para averiguar si el mail existe*/
+  })
+], usersController.register);
+
 
 router.post('/login', usersController.login);
 
