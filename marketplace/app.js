@@ -37,7 +37,6 @@ const mainRoutes = require('./routes/mainRoutes');
 const userRoutes = require('./routes/userRoutes');
 
 const productAPIRoutes = require('./routes/api/productRoutes');
-const { dirname } = require('path');
 
 app.use(express.static(publicPath));
 
