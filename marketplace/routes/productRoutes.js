@@ -10,6 +10,8 @@ const assertIsAdmin = require('../middlewares/auth/assert-is-admin');
 
 const imagesPath = path.resolve(__dirname, '../public/img/products/');
 
+const productValidation = require('../middlewares/validations/product');
+
 var storage = multer.diskStorage({
   destination: function (req, file, cb) {
     cb(null, imagesPath);
@@ -22,7 +24,20 @@ var storage = multer.diskStorage({
   },
 });
 
-var upload = multer({ storage: storage });
+var upload = multer({
+  storage: storage,
+  fileFilter: (req, file, cb) => {
+    const acceptedExtensions = ['.jpg', '.jpeg', '.png'];
+
+    const ext = path.extname(file.originalname).toLowerCase();
+
+    if (!acceptedExtensions.includes(ext)) {
+      req.file = file;
+    }
+
+    cb(null, acceptedExtensions.includes(ext));
+  },
+});
 
 const productsController = require('../controllers/productController');
 const { route } = require('./mainRoutes');
@@ -49,6 +64,7 @@ router.post(
   '/',
   assertSignedIn,
   assertIsAdmin,
+  productValidation,
   upload.single('image'),
   productsController.create
 );
@@ -57,6 +73,7 @@ router.put(
   '/:id',
   assertSignedIn,
   assertIsAdmin,
+  productValidation,
   upload.single('image'),
   productsController.edit
 );

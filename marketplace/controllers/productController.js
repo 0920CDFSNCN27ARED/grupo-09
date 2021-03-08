@@ -4,6 +4,7 @@ const productsService = require('../services/productsService');
 const productsCategoriesService = require('../services/productCategoriesService');
 const productsVariantsService = require('../services/productsVariantsService');
 const { swal } = require('sweetalert');
+const { check, validationResult, body } = require('express-validator');
 
 const controller = {
   index: async (req, res) => {
@@ -52,24 +53,40 @@ const controller = {
     });
   },
 
-  create: (req, res) => {
-    const product = req.body;
+  create: async (req, res) => {
+    let errors = validationResult(req);
 
-    productsService.create({
-      name: product.name,
-      description: product.description,
-      size: product.size,
-      weight: product.weight,
-      qty_sales: product.qty_sales,
-      qty_stock: product.qty_stock,
-      sku: product.sku,
-      price: product.price,
-      image: req.file.filename,
-      category_id: product.category,
-      variant_id: product.variant,
-    });
+    try {
+      if (errors.isEmpty()) {
+        const product = req.body;
 
-    res.redirect('/products');
+        productsService.create({
+          name: product.name,
+          description: product.description,
+          size: product.size,
+          weight: product.weight,
+          qty_sales: product.qty_sales,
+          qty_stock: product.qty_stock,
+          sku: product.sku,
+          price: product.price,
+          image: req.file.filename,
+          category_id: product.category,
+          variant_id: product.variant,
+        });
+
+        res.redirect('/products');
+      } else {
+        const categories = await productsCategoriesService.findAll();
+        const variants = await productsVariantsService.findAll();
+        return res.render('products/create', {
+          categories: categories,
+          variants: variants,
+          errors: errors.errors,
+        });
+      }
+    } catch (error) {
+      res.status(400).send(error.message);
+    }
   },
 
   showEdit: async (req, res) => {
@@ -90,28 +107,39 @@ const controller = {
   },
 
   edit: async (req, res) => {
-    let requiredProduct = await productsService.findOne(req.params.id);
+    let errors = validationResult(req);
+    try {
+      if (errors.isEmpty()) {
+        let requiredProduct = await productsService.findOne(req.params.id);
 
-    const filename = req.file ? req.file.filename : requiredProduct.image;
-    const product = req.body;
+        const filename = req.file ? req.file.filename : requiredProduct.image;
+        const product = req.body;
 
-    let editedProduct = {
-      name: product.name,
-      description: product.description,
-      size: product.size,
-      weight: product.weight,
-      qty_sales: product.qty_sales,
-      qty_stock: product.qty_stock,
-      sku: product.sku,
-      price: product.price,
-      image: filename,
-      category_id: product.category,
-      variant_id: product.variant,
-    };
+        let editedProduct = {
+          name: product.name,
+          description: product.description,
+          size: product.size,
+          weight: product.weight,
+          qty_sales: product.qty_sales,
+          qty_stock: product.qty_stock,
+          sku: product.sku,
+          price: product.price,
+          image: filename,
+          category_id: product.category,
+          variant_id: product.variant,
+        };
 
-    await productsService.update(requiredProduct.id, editedProduct);
+        await productsService.update(requiredProduct.id, editedProduct);
 
-    res.redirect('/products');
+        res.redirect('/products');
+      } else {
+        return res.render('products/create', {
+          errors: errors.errors,
+        });
+      }
+    } catch (error) {
+      res.status(400).send(error.message);
+    }
   },
 
   delete: (req, res) => {
