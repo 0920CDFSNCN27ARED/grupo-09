@@ -29,6 +29,7 @@
     "mysql2": "^2.2.5",
     "path": "^0.12.7",
     "sequelize": "^6.5.0",
-    "sweetalert": "^2.1.2"
+    "sweetalert": "^2.1.2",
+    "validator": "^13.5.2"
   }
 }

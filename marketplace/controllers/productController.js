@@ -74,7 +74,7 @@ const controller = {
           variant_id: product.variant,
         });
 
-        res.redirect('/products');
+        /*   res.redirect('/products'); */
       } else {
         const categories = await productsCategoriesService.findAll();
         const variants = await productsVariantsService.findAll();

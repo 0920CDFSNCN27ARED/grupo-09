@@ -227,3 +227,9 @@ footer {
   display: flex;
   justify-content: space-between;
 }
+
+/* Forms */
+.frontError {
+  color: brown;
+  font-size: 14px;
+}

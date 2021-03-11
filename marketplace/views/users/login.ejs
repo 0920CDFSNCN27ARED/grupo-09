@@ -10,7 +10,7 @@
       <div class="background">
         <div class="login-container">
           <div class="login-box">
-            <form action="/users/login" method="POST">
+            <form action="/users/login" method="POST" id="loginForm">
               <h1>Ingresar</h1>
               <div class="new-users">
                 <p>¿Usuario Nuevo?</p>
@@ -26,17 +26,22 @@
                 <% } %>
               </ul>
               <% } %>
+              <div class="frontErrors"><ul></ul></div>
               <input
                 type="text"
                 placeholder="E-mail"
                 class="user-pass-submit"
                 name="email"
+                id="email"
+                required
               />
               <input
                 type="password"
                 placeholder="Contraseña"
                 class="user-pass-submit"
                 name="pass"
+                id="password"
+                required
               />
               <input type="checkbox" name="remember" />
               <p id="recuerdame">Recuérdame</p>
@@ -70,5 +75,13 @@
       </div>
     </main>
     <%- include("../partials/footer") %>
+
+    <!-- Validator Script -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/validator/13.5.2/validator.min.js"
+      integrity="sha512-vZEoK8xRncku4g5GANHh5zobUjeCMbZkSEahrADeAcRlk/1Ignf8sAKojkV4RZLkPw145+ILJFisI2pnjsPtGQ=="
+      crossorigin="anonymous"
+    ></script>
+    <script src="/js/validations/loginFrontValidation.js"></script>
   </body>
 </html>

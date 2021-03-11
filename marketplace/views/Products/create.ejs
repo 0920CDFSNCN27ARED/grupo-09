@@ -16,11 +16,13 @@
         <% } %>
       </ul>
       <% } %>
+      <div class="frontErrors"><ul></ul></div>
       <form
         action="/products"
         method="POST"
         class="form-container"
         enctype="multipart/form-data"
+        id="productForm"
       >
         <label for="name">Nombre del Producto:</label>
         <input
@@ -29,6 +31,7 @@
           name="name"
           placeholder="Ej: Cartas Magic"
           class="input"
+          id="productName"
           required
         />
         <label for="description">Descripcion:</label>
@@ -39,6 +42,7 @@
           class="input"
           cols="30"
           rows="10"
+          id="productDescription"
           required
         ></textarea>
 
@@ -115,5 +119,11 @@
         <button type="submit" class="form-button red">Guardar Producto</button>
       </form>
     </main>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/validator/13.5.2/validator.min.js"
+      integrity="sha512-vZEoK8xRncku4g5GANHh5zobUjeCMbZkSEahrADeAcRlk/1Ignf8sAKojkV4RZLkPw145+ILJFisI2pnjsPtGQ=="
+      crossorigin="anonymous"
+    ></script>
+    <script src="/js/validations/productFrontValidation.js"></script>
   </body>
 </html>
