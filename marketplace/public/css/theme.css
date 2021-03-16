@@ -8,6 +8,20 @@ h2 {
 }
 
 /* FONTS */
+
+@font-face {
+    font-family: 'moonhouseregular';
+    src: url('/fonts/moonhouse-ye5m-webfont.woff2') format('woff2'),
+         url('/fonts/moonhouse-ye5m-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+.moonhouse-font {
+  font-family: "moonhouseregular";
+}
+
 .font25 {
   font-size: 25px;
 }

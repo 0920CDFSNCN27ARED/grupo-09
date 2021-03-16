@@ -4,20 +4,38 @@
 }
 
 .main-section {
-  background-image: url('/img/Urza-Banner.jpg');
+  background-image: url('/img/comics-overlay-blur-min.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
   width: 100%;
   height: 500px;
-  padding: 50px;
+  padding: 200px 30px 30px 30px;
+}
+
+.home-title {
+  font-size: 70px;
+  letter-spacing: 10px;
 }
 
 .button-main {
   display: inline-block;
-  margin-top: 300px;
   padding: 10px 30px;
-  border: none;
+  border: 2px solid;
   color: white;
   font-weight: bold;
   font-size: 18px;
+  border-radius: 5px;
+}
+
+.button-main:hover {
+  background-color: #eb5a43;
+  border: none;
 }
 
 .categories {
