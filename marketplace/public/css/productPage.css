@@ -3,6 +3,7 @@
   flex-direction: row;
   margin-top: 20px;
   color: #3d3d3d;
+  height: 90vh;
 }
 
 hr {
@@ -11,21 +12,8 @@ hr {
   border: 0.5px solid #cfcfcf;
 }
 
-.left-images {
-  display: flex;
-  flex-direction: column;
-  margin-left: 15px;
-  width: 8%;
-}
-
-.left-images img {
-  width: 100%;
-  margin-bottom: 12px;
-}
-
 .main-image {
-  width: 41%;
-  margin-left: 1%;
+  width: 45%;
 }
 
 .main-image img {
@@ -37,6 +25,8 @@ hr {
 .product-description {
   margin-left: 2%;
   width: 45%;
+  display: flex;
+  flex-direction: column;
 }
 
 #product-title {
@@ -52,15 +42,15 @@ hr {
   margin-top: 12px;
 }
 
-.price-and-rating {
+.titles-and-price {
   display: flex;
   flex-direction: row;
-  margin-top: 12px;
   justify-content: space-between;
+  align-items: center;
 }
 
 #price {
-  font-size: 32px;
+  font-size: 40px;
   text-align: left;
 }
 
@@ -75,21 +65,8 @@ hr {
   margin-bottom: 15px;
 }
 
-.info-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  margin-bottom: 15px;
-}
-
 .category {
   font-size: 24px;
-}
-
-.product-info {
-  font-size: 20px;
-  align-self: center;
-  font-style: italic;
 }
 
 #description {
@@ -98,20 +75,19 @@ hr {
 }
 
 #button-container {
-  display: flex;
-  justify-content: center;
+  margin-top: auto;
+  align-self: center;
 }
 
 #button {
   font-size: 22px;
   background-color: #eb5a43;
   border: none;
+  border-radius: 5px;
+  cursor: pointer;
   text-align: center;
   color: #fbfbfb;
   padding: 15px 30px;
-  justify-self: center;
-  margin-top: 30px;
-  justify-items: flex-end;
   font-weight: bold;
 }
 

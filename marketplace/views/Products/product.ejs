@@ -1,75 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-     <%- include("../partials/head", {title: "Product Page", styles: "/css/productPage.css"});  %>  
+    <%- include("../partials/head", {title: "Product Page", styles:
+    "/css/productPage.css"}); %>
   </head>
   <body>
-     <%- include("../partials/header") %>
+    <%- include("../partials/header") %>
     <main class="product-main side-bars">
-      <section class="left-images">
-        <img src="/img/image-placeholder.png" />
-        <img src="/img/image-placeholder.png" />
-        <img src="/img/image-placeholder.png" />
-      </section>
       <section class="main-image">
         <img src="/img/products/<%= requiredProduct.image %>" />
       </section>
       <section class="product-description">
-          <h2 id= "product-title"><%= requiredProduct.name %></h2>
-          <h4 id= "product-subtitle"><%= requiredProduct.category.dataValues.name %></h5>
-            <div class="price-and-rating">
-              <h4 id="price">$<%= requiredProduct.price %></h4>  
-              <div id = "rating">
-                  <i class="far fa-star"></i>
-                  <i class="far fa-star"></i>
-                  <i class="far fa-star"></i>
-                  <i class="far fa-star"></i>
-                  <i class="far fa-star"></i>
-              </div>
-            </div>
-            <hr/>
-            <h4 id="brand"> Marca </h4>
-            <div class="info-container">
-                <p class="category">Autores:</p>
-                <p class="product-info">Autor 1, Autor 2</p>
-            </div>
-            <div class="info-container">
-                <p class="category">Numero de Paginas:</p>
-                <p class="product-info">50pp</p>
-            </div>
-            <div class="info-container">
-               <p class="category">Tamaño:</p>
-               <p class="product-info">16.8X25.8</p>
-            </div>
-            <div class="info-container">
-                <p class="category">ISSN:</p>
-                <p class="product-info">977000554600100006</p>
-            </div>
-            <hr/>
-            <p id="description">
-               <%= requiredProduct.description %>
-            </p>
-            <div id="button-container">
-              <form action="#" method="POST">
-            <button type="button" id="button">Añadir al Carrito</button>
-            </form>
-            </div>
-            <% if(user != null && user.type == "admin"){ %>
-              <div id="button">
-                 <a href="/products/<%= requiredProduct.id %>/edit" class="white-font font20 bold">
-                    Editar Producto
-                 </a>
-              </div>
-            <% } %>
+        <div class="titles-and-price">
+          <div>
+            <h2 id="product-title"><%= requiredProduct.name %></h2>
+            <h4 id="product-subtitle">
+              <%= requiredProduct.category.dataValues.name %>
+            </h4>
+          </div>
+          <h4 id="price">$<%= requiredProduct.price %></h4>
+        </div>
+
+        <hr />
+        <h4 id="brand">Descripción</h4>
+        <p id="description"><%= requiredProduct.description %></p>
+
+        <form action="#" method="POST" id="button-container">
+          <button type="button" id="button">Añadir al Carrito</button>
+        </form>
+
+        <% if(user != null && user.type == "admin"){ %>
+        <div id="button">
+          <a
+            href="/products/<%= requiredProduct.id %>/edit"
+            class="white-font font20 bold"
+          >
+            Editar Producto
+          </a>
+        </div>
+        <% } %>
       </section>
     </main>
     <section class="similar-products side-bars">
       <h2 id="similar-products-title">Productos similares</h2>
       <div class="product-card-container padding-bot30">
-          <% for(i=0; i < products.length; i++){ %> <%- include("../partials/productCard",
-          {product:products[i]}) %> <% } %>
+        <% for(i=0; i < products.length; i++){ %> <%-
+        include("../partials/productCard", {product:products[i]}) %> <% } %>
       </div>
     </section>
-  <%- include("../partials/footer") %>
+    <%- include("../partials/footer") %>
   </body>
 </html>

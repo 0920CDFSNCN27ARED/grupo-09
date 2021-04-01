@@ -144,6 +144,10 @@ h2 {
   width: 10%;
 }
 
+.w-20 {
+  width: 20%;
+}
+
 /* DISPLAYS */
 .display-none {
   display: none;

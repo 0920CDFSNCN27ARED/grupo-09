@@ -15,12 +15,13 @@
   justify-content: space-between;
   width: 100%;
   height: 500px;
-  padding: 200px 30px 30px 30px;
+  padding: 30px;
 }
 
 .home-title {
   font-size: 70px;
   letter-spacing: 10px;
+ 
 }
 
 .button-main {
@@ -35,7 +36,7 @@
 
 .button-main:hover {
   background-color: #eb5a43;
-  border: none;
+  border-color: #eb5a43;
 }
 
 .categories {

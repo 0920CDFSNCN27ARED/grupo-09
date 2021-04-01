@@ -22,6 +22,15 @@ module.exports = {
     );
   },
 
+  searchByCategory: async (category) => {
+    return await Products.findAll({
+      include: [{ model: ProductCategories, as: 'category' }],
+      where: {
+        '$category.id$': category,
+      },
+    });
+  },
+
   search: async (search, category, orderBy) => {
     if (category == 'any') {
       return await Products.findAll({
