@@ -5,9 +5,19 @@ module.exports = {
   index: async function (req, res) {
     const users = await usersService.findAll();
 
+    const usersParsed = users.map((user) => {
+      return {
+        id: user.id,
+        email: user.email,
+        first_name: user.first_name,
+        last_name: user.last_name,
+        phone: user.phone,
+      };
+    });
+
     const response = {
       count: users.length,
-      users: users,
+      users: usersParsed,
     };
 
     res.send(response);

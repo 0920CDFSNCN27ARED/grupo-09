@@ -3,7 +3,7 @@ import SideMenuLink from "./side-menu-link/SideMenuLink";
 function SideMenu() {
     return (
         <ul
-            className="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion"
+            className="navbar-nav bg-gradient-danger sidebar sidebar-dark accordion"
             id="accordionSidebar"
         >
             <a
@@ -13,22 +13,20 @@ function SideMenu() {
                 <div className="sidebar-brand-icon">
                     <i className="fas fa-chart-line"></i>
                 </div>
-                <div className="sidebar-brand-text mx-3">Admin</div>
+                <div className="sidebar-brand-text mx-3">URZA</div>
             </a>
 
             <hr className="sidebar-divider my-0" />
 
-            <SideMenuLink />
+            <SideMenuLink title="Dashboard" icon= "fas fa-fw fa-tachometer-alt" link="/dashboard"/>
 
             <hr className="sidebar-divider" />
 
             <div className="sidebar-heading">Actions</div>
 
-            <SideMenuLink />
+            <SideMenuLink title="Productos" icon="fas fa-cubes" link="/products"/>
 
-            <SideMenuLink />
-
-            <SideMenuLink />
+            <SideMenuLink title="Usuarios" icon="fas fa-users" link="/users"/>
 
             <hr className="sidebar-divider d-none d-md-block" />
         </ul>

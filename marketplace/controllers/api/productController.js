@@ -1,3 +1,4 @@
+const { forEach } = require('../../middlewares/validations/product');
 const productCategoriesService = require('../../services/productCategoriesService');
 const productService = require('../../services/productsService');
 
@@ -24,6 +25,7 @@ module.exports = {
         count: products.length,
         countByCategory: countByCategory,
         products: products,
+        categoryCount: categories.length,
       },
     };
 

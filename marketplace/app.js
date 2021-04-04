@@ -4,6 +4,7 @@ let app = express();
 const bodyParser = require('body-parser');
 const session = require('express-session');
 const cookieParser = require('cookie-parser');
+var cors = require('cors');
 
 const authenticate = require('./middlewares/auth/authenticate');
 const rememberMe = require('./middlewares/auth/rememberMe');
@@ -15,6 +16,8 @@ app.use(bodyParser.json());
 
 const methodOverride = require('method-override');
 app.use(methodOverride('_method'));
+
+app.use(cors());
 
 app.use(cookieParser());
 app.use(
@@ -50,6 +53,6 @@ app.use('/users', userRoutes);
 app.use('/api/products', productAPIRoutes);
 app.use('/api/users', userAPIRoutes);
 
-app.listen(3000, () => {
-  console.log('Servidor iniciado en http://localhost:3000');
+app.listen(3001, () => {
+  console.log('Servidor iniciado en http://localhost:3001');
 });

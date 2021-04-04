@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-
+import React, {Component} from "react";
 export default function DataCardSmall(props) {
     return (
         <div className="col-md-4 mb-4">
@@ -18,11 +18,6 @@ export default function DataCardSmall(props) {
                                 {props.value}
                             </div>
                         </div>
-                        <div className="col-auto">
-                            <i
-                                className={`fas ${props.icon} fa-2x text-gray-300`}
-                            ></i>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -33,8 +28,7 @@ export default function DataCardSmall(props) {
 DataCardSmall.propTypes = {
     color: PropTypes.string,
     title: PropTypes.string.isRequired,
-    value: PropTypes.string.isRequired,
-    icon: PropTypes.string.isRequired,
+    value: PropTypes.number.isRequired,
 };
 
 DataCardSmall.defaultProps = {
