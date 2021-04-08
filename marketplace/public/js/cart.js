@@ -13,5 +13,5 @@ function add_product(product) {
   });
 
   localStorage.setItem('urza-cart', JSON.stringify(cart));
-  swal('Success!', 'The product was added to the cart.', 'success');
+  swal('Éxito!', 'El producto fue añadido al carrito.', 'success');
 }
