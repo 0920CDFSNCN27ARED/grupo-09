@@ -41,4 +41,20 @@ module.exports = {
 
     res.send(requiredProduct);
   },
+
+  getCart: async function (req, res) {
+    const ids = req.query.ids;
+    let products = [];
+
+    if (!ids) {
+      return res.status(404).send('404 not found');
+    }
+
+    ids.forEach(async (id) => {
+      const product = await productService.findOne(id);
+
+      products.push(product);
+    });
+    res.send(products);
+  },
 };

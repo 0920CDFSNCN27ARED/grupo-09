@@ -15,69 +15,28 @@
           <p class="font20 bold">Total</p>
         </div>
         <hr class="light" />
-        <div class="product">
-          <img
-            src="https://cdn.discordapp.com/attachments/593289910203580443/775445024145801216/unknown.png"
-            alt="Producto 1"
-          />
-          <div class="desc">
-            <p class="bold">Baby Yoda</p>
-            <p>Funko Pop</p>
-          </div>
-          <p class="precio">$1800</p>
-          <p class="cantidad">1</p>
-          <p class="total">$1800</p>
-        </div>
-        <hr class="light" />
-        <div class="product">
-          <img
-            src="https://cdn.discordapp.com/attachments/593289910203580443/775445596077162517/unknown.png"
-            alt="Producto 2"
-          />
-          <div class="desc">
-            <p class="bold">Iron Man</p>
-            <p>Funko Pop</p>
-          </div>
-          <p class="precio">$1500</p>
-          <p class="cantidad">2</p>
-          <p class="total">$3000</p>
-        </div>
-        <hr class="light" />
-        <div class="product">
-          <img
-            src="https://cdn.discordapp.com/attachments/593289910203580443/775445858425503744/unknown.png"
-            alt="Producto 3"
-          />
-          <div class="desc">
-            <p class="bold">Capitan America</p>
-            <p>Action Figure</p>
-          </div>
-          <p class="precio">$1500</p>
-          <p class="cantidad">1</p>
-          <p class="total">$1500</p>
-        </div>
-        <hr class="light" />
+        <div id="productContainer"></div>
       </div>
       <aside class="black">
         <p class="bold font25">Resumen</p>
         <hr />
         <div class="flex-row space-between">
           <p>Subtotal</p>
-          <p>$6300</p>
+          <p id="subtotal"></p>
         </div>
         <hr />
         <div class="flex-row space-between">
           <p class="margin-bot15">Impuesto (21%)</p>
-          <p>$1323</p>
+          <p id="tax"></p>
         </div>
         <div class="flex-row space-between">
           <p>Envío</p>
-          <p>$253</p>
+          <p>$200</p>
         </div>
         <hr />
         <div class="flex-row space-between">
           <p class="font25 bold">Total</p>
-          <p class="font25 bold">$7876</p>
+          <p class="font25 bold" id="total"></p>
         </div>
         <button type="submit" class="red button white-font font25 bold">
           Comprar
@@ -85,5 +44,90 @@
       </aside>
     </main>
     <%- include("partials/footer") %>
+
+    <script>
+      const prodsDiv = document.getElementById('productContainer');
+      const subtotal = document.getElementById('subtotal');
+      const tax = document.getElementById('tax');
+      const total = document.getElementById('total');
+
+      const localStorageValue = localStorage.getItem('urza-cart');
+      const cart = localStorageValue ? JSON.parse(localStorageValue) : [];
+
+      async function renderProduct(prod) {
+        const response = await fetch(
+          `http://localhost:3001/api/products/${prod.id}`,
+          {
+            mode: 'cors',
+            headers: {
+              'Access-Control-Allow-Origin': '*',
+            },
+          }
+        );
+        let fullProduct = await response.json();
+
+        if (cart.length == 0) {
+          prodsDiv.innerHTML += 'No hay productos';
+        } else {
+          const productElement = `<div class="product">
+            <img
+              src= "/img/products/${fullProduct.image}"
+              alt="Producto 1"
+              class = "productImage"
+            />
+
+            <div class="desc">
+              <p class="bold">${fullProduct.name}</p>
+              <p>${fullProduct.category.name}</p>
+            </div>
+            <p class="precio">$${fullProduct.price}</p>
+            <p class="cantidad">1</p>
+            <p class="total">$${fullProduct.price}</p>
+          </div>`;
+
+          prodsDiv.innerHTML += productElement;
+        }
+        return fullProduct.price;
+      }
+
+      async function renderSubtotal() {
+        let subtotalAmount = 0;
+        for (const product of cart) {
+          let price = await renderProduct(product, subtotalAmount);
+          subtotalAmount += price;
+        }
+        subtotal.innerHTML = '$' + subtotalAmount;
+        let taxAmount = trunc(subtotalAmount * 0.21);
+        tax.innerHTML = '$' + taxAmount;
+        let totalAmount = subtotalAmount + taxAmount + 200;
+        total.innerHTML = '$' + totalAmount;
+      }
+
+      function trunc(x, posiciones = 0) {
+        var s = x.toString();
+        var l = s.length;
+        var decimalLength = s.indexOf('.') + 1;
+
+        if (l - decimalLength <= posiciones) {
+          return x;
+        }
+
+        var isNeg = x < 0;
+        var decimal = x % 1;
+        var entera = isNeg ? Math.ceil(x) : Math.floor(x);
+
+        var decimalFormated = Math.floor(
+          Math.abs(decimal) * Math.pow(10, posiciones)
+        );
+
+        var finalNum =
+          entera +
+          (decimalFormated / Math.pow(10, posiciones)) * (isNeg ? -1 : 1);
+
+        return finalNum;
+      }
+
+      renderSubtotal();
+    </script>
   </body>
 </html>

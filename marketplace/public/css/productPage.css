@@ -79,7 +79,7 @@ hr {
   align-self: center;
 }
 
-#button {
+.button {
   font-size: 22px;
   background-color: #eb5a43;
   border: none;

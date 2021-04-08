@@ -3,6 +3,7 @@
   <head>
     <%- include("../partials/head", {title: "Product Page", styles:
     "/css/productPage.css"}); %>
+    <script src="/js/cart.js"></script>
   </head>
   <body>
     <%- include("../partials/header") %>
@@ -26,7 +27,14 @@
         <p id="description"><%= requiredProduct.description %></p>
 
         <form action="#" method="POST" id="button-container">
-          <button type="button" id="button">Añadir al Carrito</button>
+          <button
+            type="button"
+            id="<%= requiredProduct.id %> "
+            onclick="add_product(this)"
+            class="button"
+          >
+            Añadir al Carrito
+          </button>
         </form>
 
         <% if(user != null && user.type == "admin"){ %>

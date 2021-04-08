@@ -15,18 +15,12 @@ let registerValidation = [
     .withMessage(
       'Contraseña inválida: minimo 8 caracteres,letras(a-zA-Z) y números '
     ),
-  body('email')
-    .custom(async function (value) {
-      /* toda la parta de DB para averiguar si el mail existe*/
-      let checkDB = await costumersService.findOneLogin(value);
-      console.log(checkDB);
-      if (checkDB != null) {
-        return false;
-      } else {
-        return true;
-      }
-    })
-    .withMessage('Este email ya esta registrado.'),
+  body('email').custom(async function (value) {
+    let userExists = await costumersService.findOneLogin(value);
+    if (userExists) {
+      return Promise.reject('El email ya esta registrado');
+    }
+  }),
 ];
 
 module.exports = registerValidation;

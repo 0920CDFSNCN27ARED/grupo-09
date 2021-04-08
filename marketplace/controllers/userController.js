@@ -40,23 +40,35 @@ const controller = {
   },
 
   login: async (req, res) => {
-    const user = await costumersService.findOneLogin(req.body.email);
+    let errors = validationResult(req);
 
-    if (user == null) return res.redirect('/users/login');
+    try {
+      if (errors.isEmpty()) {
+        const user = await costumersService.findOneLogin(req.body.email);
 
-    const pass = bcrypt.compareSync(req.body.pass, user.password);
+        if (user == null) return res.redirect('/users/login');
 
-    if (!pass) return res.redirect('/users/login');
+        const pass = bcrypt.compareSync(req.body.pass, user.password);
 
-    req.session.loggedUserId = user.id;
+        if (!pass) return res.redirect('/users/login');
 
-    if (req.body.remember != undefined) {
-      res.cookie('remember', user.id, {
-        maxAge: 1000 * 60 * 60 * 24 * 7,
-      });
+        req.session.loggedUserId = user.id;
+
+        if (req.body.remember != undefined) {
+          res.cookie('remember', user.id, {
+            maxAge: 1000 * 60 * 60 * 24 * 7,
+          });
+        }
+
+        return res.redirect('/');
+      } else {
+        return res.render('users/login', {
+          errors: errors.errors,
+        });
+      }
+    } catch (error) {
+      res.status(400).send(error.message);
     }
-
-    return res.redirect('/');
   },
 
   logOut: (req, res) => {
